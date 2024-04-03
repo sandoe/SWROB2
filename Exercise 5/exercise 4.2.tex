@@ -1,0 +1,109 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble.tex}
+\usepackage{matlab-prettifier}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ 
+	backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+	basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+	breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+	breaklines=true,                 % sets automatic line breaking
+	captionpos=b,                    % sets the caption-position to bottom
+	commentstyle=\color{mygreen},    % comment style
+	deletekeywords={...},            % if you want to delete keywords from the given language
+	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+	extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+	firstnumber=1000,                % start line enumeration with line 1000
+	frame=single,	                   % adds a frame around the code
+	keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+	keywordstyle=\color{blue},       % keyword style
+	language=Octave,                 % the language of the code
+	morekeywords={*,...},            % if you want to add more keywords to the set
+	%numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+	numbersep=5pt,                   % how far the line-numbers are from the code
+	numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+	rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+	showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+	showstringspaces=false,          % underline spaces within strings only
+	showtabs=false,                  % show tabs within strings adding particular underscores
+	stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+	stringstyle=\color{mymauve},     % string literal style
+	tabsize=2,	                   % sets default tabsize to 2 spaces
+	title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+\begin{document}
+	\input{titlePage.tex}
+	\clearpage
+	\section{Exercise: Extract range and angle from scan}
+	\subsection*{Turtlebot and PC konfiguration}
+	\subsubsection{Connection to the TurtleBot3 from powershell}
+	For making the connection to the turtlebot we are connecting to the WiFi 
+	\begin{itemize}
+		\item \textbf{ssid:} turtlebot
+		\item \textbf{password:} turtlebot3
+	\end{itemize}
+	from powershell type:
+	\begin{center}
+		\textit{ssh ubuntu@192.168.72.251}, \textit{password: turtlebot}
+	\end{center}
+	\subsubsection{Starting ROS on turtlebot from powershell}
+	from powershell type
+	\begin{center}
+		\textit{roscore}
+	\end{center}
+	\subsubsection{Connection to TurtleBot3 from Matlab}
+	For setting the ros environment variable and setting the IP on the host (turtlebot):
+	\begin{lstlisting}[style=Matlab-editor]
+		setenv('ROS_MASTER_URI','http://192.168.72.251:11311')\end{lstlisting}
+	For setting the IP on the local machine 
+	\begin{lstlisting}
+		setenv('ROS_IP','192.168.72.220')\end{lstlisting}
+	The following command is closing existing connection to be ensure that when the user is connection the robot isn't connected to anyone else
+	\begin{lstlisting}[style=Matlab-editor]
+		rosshutdown();\end{lstlisting}
+	This command will be doing the initialization of the connection between ROS and Matlab
+	\begin{lstlisting}[style=Matlab-editor]
+		rosinit('http://192.168.72.251:11311','NodeHost','192.168.72.220');\end{lstlisting} 
+	\vspace{1cm}
+	\noindent\textbf{Matlab script for init}
+	\begin{lstlisting}[style=Matlab-editor]
+		setenv('ROS_MASTER_URI','http://192.168.72.251:11311')
+		setenv('ROS_IP','192.168.72.220')
+		rosshutdown();
+		rosinit('http://192.168.72.251:11311','NodeHost','192.168.72.220');\end{lstlisting}
+	\clearpage
+	\subsection{Introduction}
+	This section introduces the importance of extracting range and angle data from scanning data in localization methods. It briefly describes the context and applications of this task in robotics and specifically with the TurtleBot platform.
+	
+	\subsection{Objective}
+	The objective of this exercise is to develop an algorithm capable of extracting range-angle coordinates from scanning data obtained from the TurtleBot. This involves capturing range data, processing it to determine the distance and angle to a wall, and validating the results against true measured values.
+	
+	\subsection{Methodology}
+	\subsubsection{Data Acquisition}
+	Describe the process of capturing range data from the TurtleBot using the ROS Laserscan (2D) message. This includes setting up the TurtleBot at a known distance and fixed angle relative to a wall.
+	
+	\subsubsection{Algorithm Development}
+	Detail the development of the algorithm for extracting range-angle coordinates. Discuss the implementation of line fitting or similar techniques to enhance robustness against irregularities on or near the wall.
+	
+	\subsection{Experimentation and Testing}
+	\subsubsection{Algorithm Testing}
+	Explain how the algorithm is tested, including the procedure for driving the robot along a wall at a fixed distance and adjusting its driving angle to maintain this distance.
+	
+	\subsubsection{Optional Enhancements}
+	Discuss optional methods for improving algorithm robustness, such as the implementation of k-means clustering or the Hough transform, to focus on fitting lines or planes to the most significant wall area while ignoring corners and other non-relevant features.
+	
+	\subsection{Results}
+	Present the results of the algorithm testing, including comparisons between the extracted data and true measured values. Include any relevant data visualizations or statistical analyses.
+	
+	\subsection{Discussion}
+	Analyze the performance of the developed algorithm, highlighting its strengths and limitations. Discuss any discrepancies between the extracted data and true values, and suggest possible explanations and improvements.
+	
+	\subsection{Conclusion}
+	Summarize the findings of the exercise, emphasizing the importance of accurate range and angle data extraction in localization methods. Reflect on the potential applications of this work in robotics and future research directions.
+	
+\end{document}

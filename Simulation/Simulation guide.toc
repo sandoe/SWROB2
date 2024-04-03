@@ -1,0 +1,57 @@
+\contentsline {section}{\numberline {1}Purpose}{3}{section.1}%
+\contentsline {section}{\numberline {2}System Requirements and Compatibility}{3}{section.2}%
+\contentsline {section}{\numberline {3}VMware Installation}{4}{section.3}%
+\contentsline {section}{\numberline {4}Ubuntu 20.04 LTS Installation in VMware}{4}{section.4}%
+\contentsline {section}{\numberline {5}ROS Noetic Installation}{4}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Environment Setup}{5}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Dependencies for Building Packages}{5}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Initialize rosdep}{5}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Installing ROS Dependencies}{5}{section.6}%
+\contentsline {section}{\numberline {7}TurtleBot3 and Gazebo Installation}{6}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Configuring the TurtleBot3 Model Environment Variable Permanently}{6}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Testing the Installation with TurtleBot3 in Gazebo}{7}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Oneline install of ROS Neotic}{7}{section.8}%
+\contentsline {section}{\numberline {9}Install Dependent ROS Packages}{7}{section.9}%
+\contentsline {section}{\numberline {10}Managing, Creating, and Launching a New ROS Project}{8}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Managing Multiple Projects}{8}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Creating a New ROS Project}{8}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Building Your ROS Project}{8}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Launching a Newly Created Project}{9}{subsection.10.4}%
+\contentsline {section}{\numberline {11}ROS Network Configuration Guide}{9}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Introduction}{9}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Prerequisites}{10}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Configuration Steps}{10}{subsection.11.3}%
+\contentsline {subsubsection}{\numberline {11.3.1}Identify the ROS Master Machine}{10}{subsubsection.11.3.1}%
+\contentsline {subsubsection}{\numberline {11.3.2}Configure the \texttt {ROS\_MASTER\_URI}}{10}{subsubsection.11.3.2}%
+\contentsline {subsubsection}{\numberline {11.3.3}Set the \texttt {ROS\_IP}}{10}{subsubsection.11.3.3}%
+\contentsline {subsubsection}{\numberline {11.3.4}Apply the Configuration}{10}{subsubsection.11.3.4}%
+\contentsline {subsubsection}{\numberline {11.3.5}Verify the Configuration}{11}{subsubsection.11.3.5}%
+\contentsline {subsection}{\numberline {11.4}Troubleshooting Tips}{11}{subsection.11.4}%
+\contentsline {subsection}{\numberline {11.5}Conclusion}{11}{subsection.11.5}%
+\contentsline {section}{\numberline {12}Installation and Configuration of roscpp with ROS Noetic, Gazebo, and TurtleBot Simulation}{12}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Introduction}{12}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Prerequisites}{12}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Configuration Steps}{12}{subsection.12.3}%
+\contentsline {subsubsection}{\numberline {12.3.1}Install roscpp}{12}{subsubsection.12.3.1}%
+\contentsline {subsubsection}{\numberline {12.3.2}Install Gazebo for ROS Noetic}{12}{subsubsection.12.3.2}%
+\contentsline {subsubsection}{\numberline {12.3.3}Install TurtleBot3 Simulation Packages}{12}{subsubsection.12.3.3}%
+\contentsline {subsubsection}{\numberline {12.3.4}Running a TurtleBot3 Simulation}{12}{subsubsection.12.3.4}%
+\contentsline {subsection}{\numberline {12.4}Troubleshooting Tips}{13}{subsection.12.4}%
+\contentsline {subsection}{\numberline {12.5}Conclusion}{13}{subsection.12.5}%
+\contentsline {section}{\numberline {13}Setting Up ROS Workspace}{13}{section.13}%
+\contentsline {section}{\numberline {14}Create a ROS Package}{13}{section.14}%
+\contentsline {section}{\numberline {15}Installing Gazebo and Rviz Plugin}{14}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Installing the Camera Plugin}{14}{subsection.15.1}%
+\contentsline {subsubsection}{\numberline {15.1.1}Add the Camera Model to the URDF/Xacro File}{14}{subsubsection.15.1.1}%
+\contentsline {subsubsection}{\numberline {15.1.2}Integrate the Camera Plugin in Gazebo Configuration}{15}{subsubsection.15.1.2}%
+\contentsline {subsection}{\numberline {15.2}Testing the Camera Integration}{16}{subsection.15.2}%
+\contentsline {section}{\numberline {16}Write Your First ROS Node in C++}{16}{section.16}%
+\contentsline {section}{\numberline {17}Run Your ROS Node}{18}{section.17}%
+\contentsline {section}{\numberline {18}Source Your Environment (if necessary)}{18}{section.18}%
+\contentsline {section}{\numberline {19}Installing MATLAB on Ubuntu with Robotics Toolbox}{19}{section.19}%
+\contentsline {subsection}{\numberline {19.1}Introduction}{19}{subsection.19.1}%
+\contentsline {subsection}{\numberline {19.2}Step 1: Download MATLAB}{19}{subsection.19.2}%
+\contentsline {subsection}{\numberline {19.3}Step 2: Prepare the Installation}{19}{subsection.19.3}%
+\contentsline {subsection}{\numberline {19.4}Step 3: Complete the Installation}{19}{subsection.19.4}%
+\contentsline {subsection}{\numberline {19.5}Step 4: Activate MATLAB}{19}{subsection.19.5}%
+\contentsline {subsection}{\numberline {19.6}Conclusion}{20}{subsection.19.6}%
