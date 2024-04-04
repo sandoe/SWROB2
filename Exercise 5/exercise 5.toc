@@ -1,0 +1,23 @@
+\contentsline {section}{\numberline {1}Exercise: Extract range and angle from scan}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Introduction}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Objective}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Methodology}{2}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Data Acquisition}{2}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Sensor Calibration}{3}{subsubsection.1.3.2}%
+\contentsline {paragraph}{Error Differentiation}{3}{section*.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}Algorithm Development}{3}{subsubsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.4}Experimentation and Testing}{3}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Algorithm Testing}{3}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.2}Optional Enhancements}{3}{subsubsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.5}Results}{3}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Discussion}{3}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Conclusion}{4}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Simulation of Turtlebot}{4}{subsection.1.8}%
+\contentsline {subsubsection}{\numberline {1.8.1}Simulation environment}{4}{subsubsection.1.8.1}%
+\contentsline {subsubsection}{\numberline {1.8.2}Simulation of Turtlebot behavior}{5}{subsubsection.1.8.2}%
+\contentsline {subsubsection}{\numberline {1.8.3}Turtlebot and PC konfiguration}{5}{subsubsection.1.8.3}%
+\contentsline {subsection}{\numberline {1.9}Physical Turtlebot}{5}{subsection.1.9}%
+\contentsline {subsubsection}{\numberline {1.9.1}Turtlebot and PC konfiguration}{5}{subsubsection.1.9.1}%
+\contentsline {subsubsection}{\numberline {1.9.2}Connection to the TurtleBot3 from powershell}{5}{subsubsection.1.9.2}%
+\contentsline {subsubsection}{\numberline {1.9.3}Starting ROS on turtlebot from powershell}{5}{subsubsection.1.9.3}%
+\contentsline {subsubsection}{\numberline {1.9.4}Connection to TurtleBot3 from Matlab}{6}{subsubsection.1.9.4}%
