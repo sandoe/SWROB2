@@ -14,10 +14,9 @@
 \contentsline {subsection}{\numberline {1.7}Conclusion}{4}{subsection.1.7}%
 \contentsline {subsection}{\numberline {1.8}Simulation of Turtlebot}{4}{subsection.1.8}%
 \contentsline {subsubsection}{\numberline {1.8.1}Simulation environment}{4}{subsubsection.1.8.1}%
-\contentsline {subsubsection}{\numberline {1.8.2}Simulation of Turtlebot behavior}{5}{subsubsection.1.8.2}%
-\contentsline {subsubsection}{\numberline {1.8.3}Turtlebot and PC konfiguration}{5}{subsubsection.1.8.3}%
-\contentsline {subsection}{\numberline {1.9}Physical Turtlebot}{5}{subsection.1.9}%
-\contentsline {subsubsection}{\numberline {1.9.1}Turtlebot and PC konfiguration}{5}{subsubsection.1.9.1}%
-\contentsline {subsubsection}{\numberline {1.9.2}Connection to the TurtleBot3 from powershell}{5}{subsubsection.1.9.2}%
-\contentsline {subsubsection}{\numberline {1.9.3}Starting ROS on turtlebot from powershell}{5}{subsubsection.1.9.3}%
-\contentsline {subsubsection}{\numberline {1.9.4}Connection to TurtleBot3 from Matlab}{6}{subsubsection.1.9.4}%
+\contentsline {subsubsection}{\numberline {1.8.2}Matlab script}{5}{subsubsection.1.8.2}%
+\contentsline {subsection}{\numberline {1.9}Physical Turtlebot}{7}{subsection.1.9}%
+\contentsline {subsubsection}{\numberline {1.9.1}Turtlebot and PC konfiguration}{7}{subsubsection.1.9.1}%
+\contentsline {subsubsection}{\numberline {1.9.2}Connection to the TurtleBot3 from powershell}{7}{subsubsection.1.9.2}%
+\contentsline {subsubsection}{\numberline {1.9.3}Starting ROS on turtlebot from powershell}{7}{subsubsection.1.9.3}%
+\contentsline {subsubsection}{\numberline {1.9.4}Connection to TurtleBot3 from Matlab}{7}{subsubsection.1.9.4}%

@@ -90,26 +90,87 @@
 	\subsection{Simulation of Turtlebot}
 	In this section the konfiguration for the simulated Turtlebot will be shown.
 	\subsubsection{Simulation environment}
-	Figure \ref{fig:fig1} is showing Gazebo and Turtlebot started up from the terminal by using following command \texttt{roslaunch turtlebot3\_gazebo turtlebot3\_house.launch}
+	Figure \ref{fig:fig1} is showing Gazebo and Turtlebot started up from the terminal by using following command in the terminal \texttt{roslaunch turtlebot3\_gazebo turtlebot3\_house.launch}
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[width=\linewidth]{fig1.png}
 		\caption{Simulation environment in Ubuntu (Fosscal), Gazebo V11 and Turtlebot3}
 		\label{fig:fig1}
 	\end{figure}
-	The Turtlebot model is missing it's camera and therefore we need to terminate the session and navigate to following folder \texttt{catkin\_ws} for then be using the command \texttt{source devel/setup.bash}. We relaunch the simulation by following command:
+	
+	\noindent The Turtlebot model is missing it's camera and therefore we need to terminate the session and navigate to the following folder \texttt{catkin\_ws} for then be using the command \texttt{source devel/setup.bash}. The purpose of this command it is to do the environment setting. We relaunch the simulation by following command:
 	
 	\noindent\texttt{roslaunch turtlebot3\_gazebo}\texttt{turtlebot3\_house.launch}.
 	\\\\
-	To verify that the camera and Lidar sensor is working then we are going to be running \texttt{rostopic list} followed up by \texttt{rostopic echo /scan} (Lidar) and \texttt{rostopic echo /camera/image\_raw}. By looking at the data stream then we can verify that the configuration is done and our environment running.
+	To verify that the camera and Lidar sensor is working then we run \texttt{rostopic list} (showing the list of ROS-topics) followed up by \texttt{rostopic echo /scan} (topic for Lidar) and \texttt{rostopic echo /camera/image\_raw} (topic for camera). By looking at the data stream in figure \ref{fig:fig5} then we can verify that the configuration is done and our environment is running.
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[width=\linewidth]{fig4.png}
 		\caption{Showing rostopic list}
 		\label{fig:fig4}
 	\end{figure}
-	\subsubsection{Simulation of Turtlebot behavior}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\linewidth]{fig5.png}
+		\caption{/scan data stream}
+		\label{fig:fig5}
+	\end{figure}
+	\subsubsection{Matlab script}
+	In this section there will be an introduction to the Matlab script for getting the values from the Lidar which is published on the topic \texttt{/scan}.
 	
+	\begin{verbatim}
+	% Initialize ROS
+	rosshutdown;
+	rosinit('http://localhost:11311'); % Replace with your ROS master's URI
+	
+	% Create Subscriber for /scan Topic
+	scanSub = rossubscriber('/scan', 'sensor_msgs/LaserScan');
+	
+	% Create Publisher for cmd_vel Topic
+	cmdVelPub = rospublisher('/cmd_vel', 'geometry_msgs/Twist');
+	
+	% Define an empty Twist message to control the robot
+	twistMsg = rosmessage(cmdVelPub);
+	
+	% Loop that runs until the script is stopped
+	while true
+		% Receive scanning data
+		scanData = receive(scanSub);
+		
+		% Calculate the angles for each distance measurement
+		angles = scanData.AngleMin : scanData.AngleIncrement : scanData.AngleMax;
+		
+		% Find the average distance to the wall on the right side
+		rightIndices = find(angles >= -pi/2 & angles <= pi/2);
+		rightDistances = scanData.Ranges(rightIndices);
+		rightDistance = min(rightDistances);
+		
+		% Adjust the robot's velocities based on the distance to the wall
+		if rightDistance < 1.0 % If the distance is too close, turn left
+			twistMsg.Linear.X = 0.2; % Forward speed
+			twistMsg.Angular.Z = 0.5; % Left turn
+		else % Otherwise, follow the wall on the right side
+			twistMsg.Linear.X = 0.5; % Forward speed
+			twistMsg.Angular.Z = -0.1; % Right turn
+		end
+		
+		% Send the Twist message to the robot
+		send(cmdVelPub, twistMsg);
+		
+		% Wait for a short moment
+		pause(0.1);
+	end
+	
+	% Close the ROS connection
+	rosshutdown;
+	\end{verbatim}
+	A picture of the Turtlebot following the wall.
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\linewidth]{fig6.png}
+		\caption{Turtlebot following the wall at the right side}
+		\label{fig:fig6}
+	\end{figure}
 	\subsection{Physical Turtlebot}
 	\subsubsection{Turtlebot and PC konfiguration}
 	This section is for the physical Turtlebot and will describe how this task is going to be solved.
