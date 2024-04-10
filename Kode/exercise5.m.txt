@@ -1,0 +1,44 @@
+% Initialize ROS
+	rosshutdown;
+	rosinit('http://localhost:11311'); % Replace with your ROS master's URI
+	
+	% Create Subscriber for /scan Topic
+	scanSub = rossubscriber('/scan', 'sensor_msgs/LaserScan');
+	
+	% Create Publisher for cmd_vel Topic
+	cmdVelPub = rospublisher('/cmd_vel', 'geometry_msgs/Twist');
+	
+	% Define an empty Twist message to control the robot
+	twistMsg = rosmessage(cmdVelPub);
+	
+	% Loop that runs until the script is stopped
+	while true
+		% Receive scanning data
+		scanData = receive(scanSub);
+		
+		% Calculate the angles for each distance measurement
+		angles = scanData.AngleMin : scanData.AngleIncrement : scanData.AngleMax;
+		
+		% Find the average distance to the wall on the right side
+		rightIndices = find(angles >= -pi/2 & angles <= pi/2);
+		rightDistances = scanData.Ranges(rightIndices);
+		rightDistance = min(rightDistances);
+		
+		% Adjust the robot's velocities based on the distance to the wall
+		if rightDistance < 1.0 % If the distance is too close, turn left
+			twistMsg.Linear.X = 0.2; % Forward speed
+			twistMsg.Angular.Z = 0.5; % Left turn
+		else % Otherwise, follow the wall on the right side
+			twistMsg.Linear.X = 0.5; % Forward speed
+			twistMsg.Angular.Z = -0.1; % Right turn
+		end
+		
+		% Send the Twist message to the robot
+		send(cmdVelPub, twistMsg);
+		
+		% Wait for a short moment
+		pause(0.1);
+	end
+	
+	% Close the ROS connection
+	rosshutdown;
