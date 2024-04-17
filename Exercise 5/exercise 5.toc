@@ -5,9 +5,9 @@
 \contentsline {paragraph}{Data Acquisition:}{2}{section*.2}%
 \contentsline {subsection}{\numberline {1.4}Simulation of Turtlebot}{2}{subsection.1.4}%
 \contentsline {subsubsection}{\numberline {1.4.1}Simulation environment}{2}{subsubsection.1.4.1}%
-\contentsline {subsubsection}{\numberline {1.4.2}Matlab script}{3}{subsubsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.5}Physical TurtleBot Configuration}{6}{subsection.1.5}%
-\contentsline {paragraph}{Results:}{8}{section*.3}%
-\contentsline {paragraph}{Error Differentiation:}{8}{section*.4}%
-\contentsline {paragraph}{Our process for calibration}{9}{section*.5}%
-\contentsline {paragraph}{Links for videos:}{9}{section*.6}%
+\contentsline {subsubsection}{\numberline {1.4.2}Matlab script}{5}{subsubsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.5}Physical TurtleBot}{7}{subsection.1.5}%
+\contentsline {paragraph}{Calibration process:}{8}{section*.3}%
+\contentsline {paragraph}{Error Differentiation:}{9}{section*.4}%
+\contentsline {paragraph}{Results:}{9}{section*.5}%
+\contentsline {paragraph}{Links for videos:}{10}{section*.6}%

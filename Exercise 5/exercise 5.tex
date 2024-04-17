@@ -87,9 +87,9 @@
 		\caption{/scan data stream}
 		\label{fig:fig5}
 	\end{figure}
+	\clearpage
 	\subsubsection{Matlab script}
 	In this section there will be an introduction to the Matlab script for getting the values from the Lidar which is published on the topic \texttt{/scan}.
-	\clearpage
 	\begin{lstlisting}
 	% Initialize ROS
 	rosshutdown;
@@ -173,8 +173,8 @@
 		\caption{Turtlebot following the wall at the right side}
 		\label{fig:fig6}
 	\end{figure}
-	\subsection{Physical TurtleBot Configuration}
-	
+	\clearpage
+	\subsection{Physical TurtleBot}
 	\noindent\textbf{Matlab script for whole program}
 	\begin{lstlisting}
 		setenv('ROS_MASTER_URI','http://192.168.179.100:11311');
@@ -254,7 +254,7 @@
 			send(vel_pub,twistmsg);
 		end
 	\end{lstlisting}
-	\paragraph{Results:}
+	\paragraph{Calibration process:}
 	\begin{itemize}
 		\item \textbf{Measure the distance to the wall using a measurement tape} — Ensure accuracy by taking multiple measurements at different points along the wall.
 		\item \textbf{Make several measurements with the LIDAR sensor} — Repeat these measurements under similar conditions to ensure consistency.
@@ -266,8 +266,7 @@
 	
 	\paragraph{Error Differentiation:}
 	In the discourse on errors, it is essential to differentiate between systematic and random errors. Systematic errors are consistent and directional biases that can be corrected through calibration. In contrast, random errors manifest as unpredictable fluctuations that calibration cannot eliminate. The random errors are inherent in any measurement and can be mitigated through statistical methods such as averaging over multiple observations.
-	\clearpage
-	\paragraph{Our process for calibration}
+	\paragraph{Results:}
 	We have chosen to implement the algorithm using a pure pursuit controller from the last exercise. To do this we constantly have to update the point that we’re aiming for. This is done in a few steps.
 	\\\\
 	The data is filtered so we only see the data on the side of the wall (in our case the right of the robot)
@@ -286,6 +285,7 @@
 	Here we can see that the wall is $\approx$0.5m from the robot and it has a point 1 meter out that it is aiming for. In the attached video you can also see a printout of how close the robot is to the red line aka. the approximation of the wall.
 	\\\\
 	When initializing the pure pursuit controller we have set the position of the robot to constantly be 0,0 and the orientation to be 0 degrees because we are driving from the LIDAR reference frame. 
+	
 	\paragraph{Links for videos:}
 	\begin{itemize}
 		\item \textbf{Simulation:} \href{https://www.youtube.com/watch?v=JomIcrJGUDA}{Smulation}
