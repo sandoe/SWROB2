@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  17 APR 2024 10:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  17 APR 2024 10:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1023,54 +1023,79 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--61
 
  []
 
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 6
+5.
+(C:\Users\aso\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+<fig1.png, id=58, 1041.59137pt x 645.612pt>
+File: fig1.png Graphic file (type png)
+<use fig1.png>
+Package pdftex.def Info: fig1.png  used on input line 68.
+(pdftex.def)             Requested size: 455.24411pt x 282.17873pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [2
 
 
 {C:/Users/aso/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 7
-8.
-
-(C:\Users\aso\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-<fig1.png, id=75, 1041.59137pt x 645.612pt>
-File: fig1.png Graphic file (type png)
-<use fig1.png>
-Package pdftex.def Info: fig1.png  used on input line 81.
-(pdftex.def)             Requested size: 455.24411pt x 282.17873pt.
- [3 <./fig1.png>]
-<fig4.png, id=87, 1041.59137pt x 651.6345pt>
+<fig4.png, id=71, 1041.59137pt x 651.6345pt>
 File: fig4.png Graphic file (type png)
 <use fig4.png>
-Package pdftex.def Info: fig4.png  used on input line 93.
+Package pdftex.def Info: fig4.png  used on input line 80.
 (pdftex.def)             Requested size: 455.24411pt x 284.81099pt.
-<fig5.png, id=88, 939.51pt x 526.06537pt>
+<fig5.png, id=72, 939.51pt x 526.06537pt>
 File: fig5.png Graphic file (type png)
 <use fig5.png>
-Package pdftex.def Info: fig5.png  used on input line 99.
+Package pdftex.def Info: fig5.png  used on input line 86.
 (pdftex.def)             Requested size: 455.24411pt x 254.9086pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--103
+Underfull \hbox (badness 10000) in paragraph at lines 75--90
 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[4 <./fig4.png>]
-Overfull \hbox (7.88112pt too wide) in paragraph at lines 151--151
-[]  \T1/lmtt/m/n/12 angles = scanData.AngleMin : scanData.AngleIncrement : scan
-Data.AngleMax;[] 
- []
 
-[5 <./fig5.png>]
-<fig6.png, id=103, 941.01563pt x 527.571pt>
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3 <./fig1.png>] [4 <./fig4.png> <./fig5.png>] [5
+
+]
+<fig6.png, id=151, 941.01563pt x 527.571pt>
 File: fig6.png Graphic file (type png)
 <use fig6.png>
-Package pdftex.def Info: fig6.png  used on input line 155.
+Package pdftex.def Info: fig6.png  used on input line 172.
 (pdftex.def)             Requested size: 455.24411pt x 255.22762pt.
- [6 <./fig6.png>] [7] [8]
+ [6 <./fig6.png>] [7]
+[8]
+<fig7.png, id=270, 454.69875pt x 352.31625pt>
+File: fig7.png Graphic file (type png)
+<use fig7.png>
+Package pdftex.def Info: fig7.png  used on input line 281.
+(pdftex.def)             Requested size: 455.24411pt x 352.74545pt.
 
+Underfull \hbox (badness 10000) in paragraph at lines 271--285
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--285
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--289
+
+ []
+
+[9
+
+{C:/Users/aso/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc} <
+./fig7.png>] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (exercise 5.aux)
  ***********
@@ -1078,23 +1103,24 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `"exercise 5".out' has not changed.
-(rerunfilecheck)             Checksum: 4C5FECCEE0B435E5C94A83DC605F368F;1639.
+(rerunfilecheck)             Checksum: 9F887B04CFD1149E6084084938FC1EE5;1323.
  ) 
 Here is how much of TeX's memory you used:
- 34060 strings out of 474436
- 774628 string characters out of 5742898
- 2384190 words of memory out of 5000000
- 55749 multiletter control sequences out of 15000+600000
+ 34148 strings out of 474436
+ 775995 string characters out of 5742898
+ 2373190 words of memory out of 5000000
+ 55757 multiletter control sequences out of 15000+600000
  599459 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,12n,110p,748b,2536s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/aso/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb>
 <C:/Users/aso/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:
 /Users/aso/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Us
-ers/aso/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on "exercise 5.pdf" (9 pages, 6633490 bytes).
+ers/aso/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/User
+s/aso/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
+Output written on "exercise 5.pdf" (10 pages, 6701061 bytes).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
- 103 named destinations out of 1000 (max. 500000)
- 113 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 348 PDF objects out of 1000 (max. 8388607)
+ 182 named destinations out of 1000 (max. 500000)
+ 102 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -54,23 +54,10 @@
 	\subsection{Methodology}
 	This segment elucidates the systematic procedure adopted for data acquisition and subsequent processing.
 	
-	\subsubsection{Data Acquisition}
+	\paragraph{Data Acquisition:}
 	The acquisition of range data constitutes the first step in our methodology. Utilizing the ROS framework, the TurtleBot's onboard LaserScan sensor gathers two-dimensional scan data, which are encapsulated in the form of a Laserscan (2D) message. The sensor's angular resolution and range precision are instrumental in determining the fidelity of the data captured.
 	\\\\
 	The calibration and validation processes are important to ensure that the measurements are less contaminated with errors
-	
-	\subsubsection{Calibration process}
-	\begin{itemize}
-		\item Measure the distance to the wall using a measurement tape — Ensure accuracy by taking multiple measurements at different points along the wall.
-		\item Make several measurements with the LIDAR sensor — Repeat these measurements under similar conditions to ensure consistency.
-		\item Compare the tape measurements with the LIDAR data — Analyze how closely the LIDAR measurements align with the manual measurements from the tape.
-		\item Try to identify if there are any random or systematic errors — Look for patterns in discrepancies that might indicate consistent bias or irregular errors.
-		\item Use a best-fit line through all data points and actual measurements to the wall — This statistical method will help you find the most accurate representation of the measured data, minimizing the overall error.
-		\item Use this value from the best fit as a reference point for the robot's orientation towards the wall — Implement this calibrated value in your robot’s navigation algorithm to improve its accuracy when approaching or aligning with the wall. 
-	\end{itemize}
-	
-	\paragraph{Error Differentiation}
-	In the discourse on errors, it is essential to differentiate between systematic and random errors. Systematic errors are consistent and directional biases that can be corrected through calibration. In contrast, random errors manifest as unpredictable fluctuations that calibration cannot eliminate. The random errors are inherent in any measurement and can be mitigated through statistical methods such as averaging over multiple observations.
 	
 	\subsection{Simulation of Turtlebot}
 	In this section the konfiguration for the simulated Turtlebot will be shown.
@@ -102,53 +89,83 @@
 	\end{figure}
 	\subsubsection{Matlab script}
 	In this section there will be an introduction to the Matlab script for getting the values from the Lidar which is published on the topic \texttt{/scan}.
-	
-	\begin{verbatim}
+	\clearpage
+	\begin{lstlisting}
 	% Initialize ROS
 	rosshutdown;
 	rosinit('http://localhost:11311'); % Replace with your ROS master's URI
 	
-	% Create Subscriber for /scan Topic
-	scanSub = rossubscriber('/scan', 'sensor_msgs/LaserScan');
+	%% Subscriber and publisher setup
+	vel_pub = rospublisher('/cmd_vel');
+	scansub = rossubscriber('/scan');
+	pos_sub = rossubscriber('/tf');
 	
-	% Create Publisher for cmd_vel Topic
-	cmdVelPub = rospublisher('/cmd_vel', 'geometry_msgs/Twist');
+	%% Controller setup
+	controller = controllerPurePursuit;
+	controller.DesiredLinearVelocity = 0.2;
+	controller.MaxAngularVelocity = 2;
 	
-	% Define an empty Twist message to control the robot
-	twistMsg = rosmessage(cmdVelPub);
+	%We found that the robot is relatively stable with a LookAheadDistance of
+	%0.4
+	controller.LookaheadDistance = 0.4;
 	
-	% Loop that runs until the script is stopped
-	while true
-		% Receive scanning data
-		scanData = receive(scanSub);
+	%Since we're using the reference frame of the LIDAR position and angle are
+	%always 0
+	robotCurrentPose = [0; 0; 0];
+	
+	while(1)
+		%% Data retrieval
+		scan = receive(scansub);
+		cart = readCartesian(scan);
 		
-		% Calculate the angles for each distance measurement
-		angles = scanData.AngleMin : scanData.AngleIncrement : scanData.AngleMax;
+		hold on
+		xlim([-4 4])
+		ylim([-4 4])
 		
-		% Find the average distance to the wall on the right side
-		rightIndices = find(angles >= -pi/2 & angles <= pi/2);
-		rightDistances = scanData.Ranges(rightIndices);
-		rightDistance = min(rightDistances);
+		x = cart(:, 1);  % x-pos
+		d = cart(:, 2);  % y-pos
 		
-		% Adjust the robot's velocities based on the distance to the wall
-		if rightDistance < 1.0 % If the distance is too close, turn left
-			twistMsg.Linear.X = 0.2; % Forward speed
-			twistMsg.Angular.Z = 0.5; % Left turn
-		else % Otherwise, follow the wall on the right side
-			twistMsg.Linear.X = 0.5; % Forward speed
-			twistMsg.Angular.Z = -0.1; % Right turn
-		end
+		% Filter out points with y coordinates above 0 (to the right of the robot)
+		filtered_indices = d <= 0;
+		x = x(filtered_indices);
+		d = d(filtered_indices);
 		
-		% Send the Twist message to the robot
-		send(cmdVelPub, twistMsg);
+		%% Fitting the line of the wall and plotting it
 		
-		% Wait for a short moment
-		pause(0.1);
+		mdl = fitlm(x,d);
+		coef=mdl.Coefficients.Estimate;
+		
+		plot(x, (coef(1) + coef(2)*x), 'r')
+		
+		% Calculate the distance from the robot to the line to check if
+		% distance is ~0.5 meter
+		distance = abs(coef(1)) / sqrt(1 + coef(2)^2);
+		
+		fprintf('Closest distance from (0,0) to the line: %f\n', distance);
+		
+		%Defining a point to aim for 0.5 meters out from the wall and 1 meter
+		%ahead
+		aim_point = [1 0.5+(coef(2)*1+coef(1))];
+		
+		plot(aim_point(1),aim_point(2),'b.');
+		
+		%Setting the controller to go towards the aim-point
+		controller.Waypoints = aim_point;
+		[v, w] = controller(robotCurrentPose);
+		update_vel(v,w,vel_pub)		
 	end
 	
-	% Close the ROS connection
-	rosshutdown;
-	\end{verbatim}
+	function [true] = update_vel(v,w,vel_pub)
+		%Very simple function. We get a new linear and angular velocity from the
+		%controller and output it to the cmd_vel topic.
+		twistmsg = rosmessage(vel_pub);
+		
+		twistmsg.Angular.Z = w;
+		twistmsg.Linear.X = v;
+		
+		send(vel_pub,twistmsg);
+	end
+	\end{lstlisting}
 	A picture of the Turtlebot following the wall.
 	\begin{figure}[!h]
 		\centering
@@ -157,6 +174,7 @@
 		\label{fig:fig6}
 	\end{figure}
 	\subsection{Physical TurtleBot Configuration}
+	
 	\noindent\textbf{Matlab script for whole program}
 	\begin{lstlisting}
 		setenv('ROS_MASTER_URI','http://192.168.179.100:11311');
@@ -236,4 +254,36 @@
 			send(vel_pub,twistmsg);
 		end
 	\end{lstlisting}
+	\paragraph{Results:}
+	\begin{itemize}
+		\item \textbf{Measure the distance to the wall using a measurement tape} — Ensure accuracy by taking multiple measurements at different points along the wall.
+		\item \textbf{Make several measurements with the LIDAR sensor} — Repeat these measurements under similar conditions to ensure consistency.
+		\item \textbf{Compare the tape measurements with the LIDAR data} — Analyze how closely the LIDAR measurements align with the manual measurements from the tape.
+		\item \textbf{Try to identify if there are any random or systematic errors} — Look for patterns in discrepancies that might indicate consistent bias or irregular errors.
+		\item \textbf{Use a best-fit line through all data points and actual measurements to the wall} — This statistical method will help you find the most accurate representation of the measured data, minimizing the overall error.
+		\item \textbf{Use this value from the best fit as a reference point for the robot's orientation towards the wall} — Implement this calibrated value in your robot’s navigation algorithm to improve its accuracy when approaching or aligning with the wall. 
+	\end{itemize}
+	
+	\paragraph{Error Differentiation:}
+	In the discourse on errors, it is essential to differentiate between systematic and random errors. Systematic errors are consistent and directional biases that can be corrected through calibration. In contrast, random errors manifest as unpredictable fluctuations that calibration cannot eliminate. The random errors are inherent in any measurement and can be mitigated through statistical methods such as averaging over multiple observations.
+	\clearpage
+	\paragraph{Our process for calibration}
+	We have chosen to implement the algorithm using a pure pursuit controller from the last exercise. To do this we constantly have to update the point that we’re aiming for. This is done in a few steps.
+	\\\\
+	The data is filtered so we only see the data on the side of the wall (in our case the right of the robot)
+	A line is fitted to the data.
+	We calculate a point that is 0.5m out from the wall 1 meter ahead of the robot.
+	We set this point as the next waypoint and update the velocity to what is calculated by the pure pursuit controller.
+	\\\\
+	This way the robot constantly tries to stay 0.5m out from the wall. While the robot runs we have made a plot that shows what the robot is seeing:
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{fig7}
+		\caption{Showing green = robot, blue = waypoint, red = wall.}
+		\label{fig:fig7}
+	\end{figure}
+	
+	Here we can see that the wall is $\approx$0.5m from the robot and it has a point 1 meter out that it is aiming for. In the attached video you can also see a printout of how close the robot is to the red line aka. the approximation of the wall.
+	\\\\
+	When initializing the pure pursuit controller we have set the position of the robot to constantly be 0,0 and the orientation to be 0 degrees because we are driving from the LIDAR reference frame. 
 \end{document}
