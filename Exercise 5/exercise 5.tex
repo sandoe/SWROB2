@@ -57,35 +57,20 @@
 	\subsubsection{Data Acquisition}
 	The acquisition of range data constitutes the first step in our methodology. Utilizing the ROS framework, the TurtleBot's onboard LaserScan sensor gathers two-dimensional scan data, which are encapsulated in the form of a Laserscan (2D) message. The sensor's angular resolution and range precision are instrumental in determining the fidelity of the data captured.
 	\\\\
-	For calibration and validation purposes, the TurtleBot is meticulously positioned at a predetermined distance and angle with respect to a well-defined wall. This setup ensures that the range data collected are grounded in a known reference frame, which is essential for the subsequent stages of data analysis.
-	\\\\
-	\textit{Note: It would be beneficial to include a diagram here that visually represents the TurtleBot’s positioning relative to the wall, showing the angle of incidence and the specific region of the wall being scanned. This would help clarify the setup and expected data collection geometry.}
+	The calibration and validation processes are important to ensure that the measurements are less contaminated with errors
 	
-	\subsubsection{Sensor Calibration}
-	Prior to the initiation of data acquisition, calibrating the sensor is paramount to ensure the precision of the measurements. Calibration encompasses the fine-tuning of sensor parameters to rectify any systematic errors, thus harmonizing the sensor's output with the established reference distance. This procedure is iterated until the deviation of the sensor's readings from the expected values is minimized.
+	\subsubsection{Calibration process}
+	\begin{itemize}
+		\item Measure the distance to the wall using a measurement tape — Ensure accuracy by taking multiple measurements at different points along the wall.
+		\item Make several measurements with the LIDAR sensor — Repeat these measurements under similar conditions to ensure consistency.
+		\item Compare the tape measurements with the LIDAR data — Analyze how closely the LIDAR measurements align with the manual measurements from the tape.
+		\item Try to identify if there are any random or systematic errors — Look for patterns in discrepancies that might indicate consistent bias or irregular errors.
+		\item Use a best-fit line through all data points and actual measurements to the wall — This statistical method will help you find the most accurate representation of the measured data, minimizing the overall error.
+		\item Use this value from the best fit as a reference point for the robot's orientation towards the wall — Implement this calibrated value in your robot’s navigation algorithm to improve its accuracy when approaching or aligning with the wall. 
+	\end{itemize}
 	
 	\paragraph{Error Differentiation}
 	In the discourse on errors, it is essential to differentiate between systematic and random errors. Systematic errors are consistent and directional biases that can be corrected through calibration. In contrast, random errors manifest as unpredictable fluctuations that calibration cannot eliminate. The random errors are inherent in any measurement and can be mitigated through statistical methods such as averaging over multiple observations.
-	
-	
-	\subsubsection{Algorithm Development}
-	Detail the development of the algorithm for extracting range-angle coordinates. Discuss the implementation of line fitting or similar techniques to enhance robustness against irregularities on or near the wall.
-	
-	\subsection{Experimentation and Testing}
-	\subsubsection{Algorithm Testing}
-	Explain how the algorithm is tested, including the procedure for driving the robot along a wall at a fixed distance and adjusting its driving angle to maintain this distance.
-	
-	\subsubsection{Optional Enhancements}
-	Discuss optional methods for improving algorithm robustness, such as the implementation of k-means clustering or the Hough transform, to focus on fitting lines or planes to the most significant wall area while ignoring corners and other non-relevant features.
-	
-	\subsection{Results}
-	Present the results of the algorithm testing, including comparisons between the extracted data and true measured values. Include any relevant data visualizations or statistical analyses.
-	
-	\subsection{Discussion}
-	Analyze the performance of the developed algorithm, highlighting its strengths and limitations. Discuss any discrepancies between the extracted data and true values, and suggest possible explanations and improvements.
-	
-	\subsection{Conclusion}
-	Summarize the findings of the exercise, emphasizing the importance of accurate range and angle data extraction in localization methods. Reflect on the potential applications of this work in robotics and future research directions.
 	
 	\subsection{Simulation of Turtlebot}
 	In this section the konfiguration for the simulated Turtlebot will be shown.
@@ -172,18 +157,6 @@
 		\label{fig:fig6}
 	\end{figure}
 	\subsection{Physical TurtleBot Configuration}
-	\subsubsection{Network Configuration for TurtleBot and PC}
-	This section describes the network setup for the physical TurtleBot.
-	\subsubsection{Connecting to the TurtleBot3 from PowerShell}
-	To connect to the TurtleBot, connect to its WiFi network with the following credentials:
-	\begin{itemize}
-		\item \textbf{SSID:} turtlebot
-		\item \textbf{Password:} turtlebot3
-	\end{itemize}
-	In PowerShell, initiate the SSH connection by typing:
-	\begin{center}
-		\textit{ssh ubuntu@192.168.72.251} with the password: \textit{turtlebot}
-	\end{center}
 	\noindent\textbf{Matlab script for whole program}
 	\begin{lstlisting}
 		setenv('ROS_MASTER_URI','http://192.168.179.100:11311');

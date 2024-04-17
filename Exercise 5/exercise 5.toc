@@ -3,18 +3,9 @@
 \contentsline {subsection}{\numberline {1.2}Objective}{2}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}Methodology}{2}{subsection.1.3}%
 \contentsline {subsubsection}{\numberline {1.3.1}Data Acquisition}{2}{subsubsection.1.3.1}%
-\contentsline {subsubsection}{\numberline {1.3.2}Sensor Calibration}{3}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.2}Calibration process}{2}{subsubsection.1.3.2}%
 \contentsline {paragraph}{Error Differentiation}{3}{section*.2}%
-\contentsline {subsubsection}{\numberline {1.3.3}Algorithm Development}{3}{subsubsection.1.3.3}%
-\contentsline {subsection}{\numberline {1.4}Experimentation and Testing}{3}{subsection.1.4}%
-\contentsline {subsubsection}{\numberline {1.4.1}Algorithm Testing}{3}{subsubsection.1.4.1}%
-\contentsline {subsubsection}{\numberline {1.4.2}Optional Enhancements}{3}{subsubsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.5}Results}{3}{subsection.1.5}%
-\contentsline {subsection}{\numberline {1.6}Discussion}{3}{subsection.1.6}%
-\contentsline {subsection}{\numberline {1.7}Conclusion}{4}{subsection.1.7}%
-\contentsline {subsection}{\numberline {1.8}Simulation of Turtlebot}{4}{subsection.1.8}%
-\contentsline {subsubsection}{\numberline {1.8.1}Simulation environment}{4}{subsubsection.1.8.1}%
-\contentsline {subsubsection}{\numberline {1.8.2}Matlab script}{5}{subsubsection.1.8.2}%
-\contentsline {subsection}{\numberline {1.9}Physical TurtleBot Configuration}{7}{subsection.1.9}%
-\contentsline {subsubsection}{\numberline {1.9.1}Network Configuration for TurtleBot and PC}{7}{subsubsection.1.9.1}%
-\contentsline {subsubsection}{\numberline {1.9.2}Connecting to the TurtleBot3 from PowerShell}{7}{subsubsection.1.9.2}%
+\contentsline {subsection}{\numberline {1.4}Simulation of Turtlebot}{3}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Simulation environment}{3}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.2}Matlab script}{4}{subsubsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.5}Physical TurtleBot Configuration}{6}{subsection.1.5}%
