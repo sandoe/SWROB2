@@ -171,42 +171,96 @@
 		\caption{Turtlebot following the wall at the right side}
 		\label{fig:fig6}
 	\end{figure}
-	\subsection{Physical Turtlebot}
-	\subsubsection{Turtlebot and PC konfiguration}
-	This section is for the physical Turtlebot and will describe how this task is going to be solved.
-	\subsubsection{Connection to the TurtleBot3 from powershell}
-	For making the connection to the turtlebot we are connecting to the WiFi 
+	\subsection{Physical TurtleBot Configuration}
+	\subsubsection{Network Configuration for TurtleBot and PC}
+	This section describes the network setup for the physical TurtleBot.
+	\subsubsection{Connecting to the TurtleBot3 from PowerShell}
+	To connect to the TurtleBot, connect to its WiFi network with the following credentials:
 	\begin{itemize}
-		\item \textbf{ssid:} turtlebot
-		\item \textbf{password:} turtlebot3
+		\item \textbf{SSID:} turtlebot
+		\item \textbf{Password:} turtlebot3
 	\end{itemize}
-	from powershell type:
+	In PowerShell, initiate the SSH connection by typing:
 	\begin{center}
-		\textit{ssh ubuntu@192.168.72.251}, \textit{password: turtlebot}
+		\textit{ssh ubuntu@192.168.72.251} with the password: \textit{turtlebot}
 	\end{center}
-	\subsubsection{Starting ROS on turtlebot from powershell}
-	from powershell type
-	\begin{center}
-		\textit{roscore}
-	\end{center}
-	\subsubsection{Connection to TurtleBot3 from Matlab}
-	For setting the ros environment variable and setting the IP on the host (turtlebot):
-	\begin{lstlisting}[style=Matlab-editor]
-		setenv('ROS_MASTER_URI','http://192.168.72.251:11311')\end{lstlisting}
-	For setting the IP on the local machine 
+	\noindent\textbf{Matlab script for whole program}
 	\begin{lstlisting}
-		setenv('ROS_IP','192.168.72.220')\end{lstlisting}
-	The following command is closing existing connection to be ensure that when the user is connection the robot isn't connected to anyone else
-	\begin{lstlisting}[style=Matlab-editor]
-		rosshutdown();\end{lstlisting}
-	This command will be doing the initialization of the connection between ROS and Matlab
-	\begin{lstlisting}[style=Matlab-editor]
-		rosinit('http://192.168.72.251:11311','NodeHost','192.168.72.220');\end{lstlisting} 
-	\vspace{1cm}
-	\noindent\textbf{Matlab script for init}
-	\begin{lstlisting}[style=Matlab-editor]
-		setenv('ROS_MASTER_URI','http://192.168.72.251:11311')
-		setenv('ROS_IP','192.168.72.220')
-		rosshutdown();
-		rosinit('http://192.168.72.251:11311','NodeHost','192.168.72.220');\end{lstlisting}
+		setenv('ROS_MASTER_URI','http://192.168.179.100:11311');
+		setenv('ROS_IP','192.168.179.38');
+		rosshutdown()
+		rosinit('http://192.168.179.100:11311','NodeHost','192.168.179.38')
+		
+		%% Subscriber and publisher setup
+		vel_pub = rospublisher('/cmd_vel');
+		scansub = rossubscriber('/scan');
+		pos_sub = rossubscriber('/tf');
+		
+		%% Controller setup
+		controller = controllerPurePursuit;
+		controller.DesiredLinearVelocity = 0.2;
+		controller.MaxAngularVelocity = 2;
+		
+		%We found that the robot is relatively stable with a LookAheadDistance of
+		%0.4
+		controller.LookaheadDistance = 0.4;
+		
+		%Since we're using the reference frame of the LIDAR position and angle are
+		%always 0
+		robotCurrentPose = [0; 0; 0];
+		
+		while(1)
+			%% Data retrieval
+			scan = receive(scansub);
+			cart = readCartesian(scan);
+			
+			hold on
+			xlim([-4 4])
+			ylim([-4 4])
+			
+			x = cart(:, 1);  % x-pos
+			d = cart(:, 2);  % y-pos
+			
+			% Filter out points with y coordinates above 0 (to the right of the robot)
+			filtered_indices = d <= 0;
+			x = x(filtered_indices);
+			d = d(filtered_indices);
+			
+			%% Fitting the line of the wall and plotting it
+			
+			mdl = fitlm(x,d);
+			coef=mdl.Coefficients.Estimate;
+			
+			plot(x, (coef(1) + coef(2)*x), 'r')
+			
+			% Calculate the distance from the robot to the line to check if
+			% distance is ~0.5 meter
+			distance = abs(coef(1)) / sqrt(1 + coef(2)^2);
+			
+			fprintf('Closest distance from (0,0) to the line: %f\n', distance);
+			
+			%Defining a point to aim for 0.5 meters out from the wall and 1 meter
+			%ahead
+			aim_point = [1 0.5+(coef(2)*1+coef(1))];
+			
+			plot(aim_point(1),aim_point(2),'b.');
+			
+			%Setting the controller to go towards the aim-point
+			controller.Waypoints = aim_point;
+			[v, w] = controller(robotCurrentPose);
+			update_vel(v,w,vel_pub)		
+		end
+		
+		function [true] = update_vel(v,w,vel_pub)
+		
+			%Very simple function. We get a new linear and angular velocity from the
+			%controller and output it to the cmd_vel topic.
+			twistmsg = rosmessage(vel_pub);
+			
+			twistmsg.Angular.Z = w;
+			twistmsg.Linear.X = v;
+			
+			send(vel_pub,twistmsg);
+		end
+	\end{lstlisting}
 \end{document}
