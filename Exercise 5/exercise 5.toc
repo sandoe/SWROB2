@@ -10,3 +10,4 @@
 \contentsline {paragraph}{Results:}{8}{section*.3}%
 \contentsline {paragraph}{Error Differentiation:}{8}{section*.4}%
 \contentsline {paragraph}{Our process for calibration}{9}{section*.5}%
+\contentsline {paragraph}{Links for videos:}{9}{section*.6}%

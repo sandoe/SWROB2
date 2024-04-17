@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  17 APR 2024 10:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  17 APR 2024 11:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1095,7 +1095,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 286--289
 [9
 
 {C:/Users/aso/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc} <
-./fig7.png>] 
+./fig7.png>] [10] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (exercise 5.aux)
  ***********
@@ -1106,8 +1106,8 @@ Package rerunfilecheck Info: File `"exercise 5".out' has not changed.
 (rerunfilecheck)             Checksum: 9F887B04CFD1149E6084084938FC1EE5;1323.
  ) 
 Here is how much of TeX's memory you used:
- 34148 strings out of 474436
- 775995 string characters out of 5742898
+ 34150 strings out of 474436
+ 776012 string characters out of 5742898
  2373190 words of memory out of 5000000
  55757 multiletter control sequences out of 15000+600000
  599459 words of font info for 66 fonts, out of 8000000 for 9000
@@ -1118,9 +1118,9 @@ Here is how much of TeX's memory you used:
 /Users/aso/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Us
 ers/aso/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/User
 s/aso/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on "exercise 5.pdf" (10 pages, 6701061 bytes).
+Output written on "exercise 5.pdf" (11 pages, 6702541 bytes).
 PDF statistics:
- 348 PDF objects out of 1000 (max. 8388607)
- 182 named destinations out of 1000 (max. 500000)
+ 356 PDF objects out of 1000 (max. 8388607)
+ 184 named destinations out of 1000 (max. 500000)
  102 words of extra memory for PDF output out of 10000 (max. 10000000)
 
