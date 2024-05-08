@@ -1,0 +1,35 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}Robot System Description}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Description of the Setup}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Hardware/Software Used}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Description of the Setup}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Hardware/Software Used}{5}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Principles of ROS}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Robot Operating System (ROS)}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Services}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Topics}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Messages}{6}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Publisher}{6}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Subscriber}{7}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Algorithms}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Motion control}{7}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Pure Pursuit Algorithm}{7}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}Perception – Camera Algorithms}{8}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Overview of Camera-Based Perception}{8}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Key Algorithms in Camera-Based Perception}{8}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Challenges in Camera-Based Perception}{9}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}Applications}{9}{subsubsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.3}Localization}{9}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Project Requirements and Localization Strategy}{9}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Techniques and Tools for Effective Localization}{10}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Challenges and Considerations}{10}{subsubsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.4}Mapping}{10}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Role of Mapping in the Project}{10}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Mapping Techniques and Technologies}{10}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Challenges in Effective Mapping}{11}{subsubsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.4}Applications of Mapping}{11}{subsubsection.4.4.4}%
+\contentsline {section}{\numberline {5}Results}{11}{section.5}%
+\contentsline {section}{\numberline {6}Discussion}{11}{section.6}%
+\contentsline {section}{\numberline {7}Conclusion}{11}{section.7}%
+\contentsline {section}{\numberline {8}Appendices}{11}{section.8}%
+\contentsline {section}{\numberline {9}References}{11}{section.9}%
