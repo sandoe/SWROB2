@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  22 MAY 2024 16:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  22 MAY 2024 17:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1368,8 +1368,15 @@ enddocument/afterlastpage: lastpage setting LastPage.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: B621F2C15EF6CBA8A30C3BC9E4362FBD;8064.
+
+
+Package rerunfilecheck Warning: File `master.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `master.out':
+(rerunfilecheck)             Before: FA7489F9FC1B3EC3B0112569451366A9;8110
+(rerunfilecheck)             After:  B621F2C15EF6CBA8A30C3BC9E4362FBD;8064.
  ) 
 Here is how much of TeX's memory you used:
  35762 strings out of 474436
@@ -1387,7 +1394,7 @@ s/aso/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/as
 o/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri9.pfb><C:/Users/aso/A
 ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/aso/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on master.pdf (26 pages, 751234 bytes).
+Output written on master.pdf (26 pages, 751235 bytes).
 PDF statistics:
  546 PDF objects out of 1000 (max. 8388607)
  107 named destinations out of 1000 (max. 500000)
