@@ -4,6 +4,8 @@
 \usepackage{xcolor}
 \usepackage{pdfpages}
 \usepackage{subcaption}
+\usepackage{biblatex}
+
 \begin{document}
 	\input{titlePage.tex}
 	\clearpage
@@ -106,7 +108,7 @@
 	\section{Algorithms}
 	\subsection{Motion control}
 	\subsubsection{Pure Pursuit Algorithm}
-	The Pure Pursuit algorithm is a geometric path tracking method commonly used in autonomous robotics and self-driving vehicles to follow a predefined path. The algorithm calculates the required steering angle to follow a path by continuously chasing a point ahead on the path, which is why it's called "pure pursuit."
+	The Pure Pursuit algorithm is a geometric path tracking method commonly used in autonomous robotics and self-driving vehicles to follow a predefined path \cite{corke2017}. The algorithm calculates the required steering angle to follow a path by continuously chasing a point ahead on the path, which is why it's called "pure pursuit."
 	
 	\subsubsection*{Basic Concept}
 	The fundamental idea behind the Pure Pursuit algorithm is relatively simple:
@@ -149,10 +151,6 @@
 		
 		% We found that the robot is relatively stable with a LookAheadDistance of 0.4
 		controller.LookaheadDistance = 0.4;
-		
-		% Since we're using the reference frame of the LIDAR, position and angle are always 0
-		first_PRM = createFirstPRM();
-		second_PRM = createSecondPRM();
 	\end{verbatim}
 	
 	\subsubsection*{Explanation}
@@ -199,7 +197,7 @@
 %	In conclusion, while the Pure Pursuit algorithm has some limitations, its simplicity and effectiveness make it a popular choice for real-world applications requiring robust path following capabilities under varying operational conditions.
 	
 	\section{Camera-Based Perception for Circle Detection}
-	Camera-based perception algorithms are crucial for enabling autonomous robots to detect and interact with objects in their surroundings. In this section, we will focus on the specific task of detecting colored circles in images captured by the robot's camera.
+	Camera-based perception algorithms are crucial for enabling autonomous robots to detect and interact with objects in their surroundings \cite{corke2017}. In this section, we will focus on the specific task of detecting colored circles in images captured by the robot's camera.
 	
 	\subsection{Overview of Circle Detection}
 	In robotic systems, cameras provide high-dimensional data that can be processed to extract meaningful information. The processing of this data is achieved through various image processing techniques:
@@ -278,9 +276,11 @@
 		\item \textbf{Dynamic Obstacles:} The ability to avoid dynamic obstacles requires the robot's localization system to be able to detect in real-time.
 		\item \textbf{Environmental Factors:} Changes in the environment, such as moved furniture or altered lighting conditions, can pose challenges to localization accuracy.
 	\end{itemize}
+	\subsection{Implementation of localization}
+	In order  for the TurtleBot to localize 
 	\clearpage
 	\section{Mapping}
-	Mapping is a crucial capability in robotics, particularly for autonomous navigation tasks. It involves creating a model of the robot's environment that can be used to plan and execute movements accurately. In the context of this project, the TurtleBot is required to map the Shannon building in order to navigate effectively and autonomously perform tasks in Locations B and C.
+	Mapping is a crucial capability in robotics, particularly for autonomous navigation tasks. It involves creating a model of the robot's environment that can be used to plan and execute movements accurately \cite{corke2017}. In the context of this project, the TurtleBot is required to map the Shannon building in order to navigate effectively and autonomously perform tasks in Locations B and C.
 	
 	\subsection{Role of Mapping in the Project}
 	The mapping process for the TurtleBot involves several key functions:
@@ -314,12 +314,12 @@
 	In summary, mapping is a foundational aspect of this project, enabling the TurtleBot to perform its tasks with high efficiency and precision. The ability to dynamically interact with the environment through continuous mapping and localization adjustments is key to the success of the TurtleBot's operations in the Shannon building.
 
 	\subsection{Implementation Of Mapping}
-	The MATLAB code for generating the PRM can be found in the Appendix~\ref{appendix:code}. In these two picture we can see all the back which is static obstacles where the blue color is all the strings between possible waypoints. Each waypoint are connected to it's nearest neighbor by a straight line and are not crossing any obstacles. 
+	The MATLAB code for generating the PRM can be found in the Appendix~\ref{appendix:code}. The black area in these two picture are what we call static obstacles. The blue color is all the strings between possible waypoints. Each waypoint are connected to it's nearest neighbor by a straight line and they will not be crossing any obstacles. For defining our map we have followed following steps: 
 	\begin{itemize}
 		\item Step 1: Defining the Binary Occupancy Map by using the function binaryOccupancyMap(29.3,28.3,10) with the following values.
-		\item Step 2: For making static obstacles in the map, following setOccupancy(map,[1,1],walls,'grid') has been used. 
-		\item Step 3: The function mobileRobotRPM is taking two arguments, occupancy map and number of node points. The map in a) is created with 1000 node points whereas the map in b) has 500 node points. 
-		\item Step 4: For finding the shortest path by we use the function findpath(PRM,startLocation,endLocation)
+		\item Step 2: For making static obstacles in the map we have been setting the Occupancy as followed setOccupancy(map,[1,1],walls,'grid'). 
+		\item Step 3: The function mobileRobotRPM is taking two arguments. One is the occupancy map itself the other parameter is number of node points. First map got 1000 node points where the other map got 500 node points.
+		\item Step 4: For finding the shortest path, we use the findpath function which is taking three arguments. First argument is the Probabilistic Road Map itself and then a start location and ending location.  findpath(PRM,startLocation,endLocation)
 	\end{itemize}
 	
 		\begin{figure}[!h]
@@ -336,7 +336,7 @@
 			\label{fig:fig11}
 		\end{subfigure}
 	\end{figure}
-	
+	\clearpage
 	\section{Obstacle Avoidance}
 	A range of techniques were implemented to handle both static and dynamic obstacles. These techniques ensure that the robot can navigate safely and efficiently in a dynamic environment such as the Shannon building.
 	
@@ -397,6 +397,25 @@
 		\item \textbf{Exploring Alternative Path Planning Methods:} Investigating other path-planning algorithms such as Bug0, Bug1, and Bug2 to enhance obstacle avoidance and navigation efficiency.
 	\end{itemize}
 	Despite the hardware challenges, the robot successfully completed its tasks, demonstrating robust localization and navigation capabilities. The experience highlighted the importance of adapting to environmental conditions and the potential for further improvements in autonomous robotics.
+	\begin{thebibliography}{9}
+		
+		\bibitem{corke2017}
+		Peter Corke,
+		\textit{Robotics, Vision and Control: Fundamental Algorithms in MATLAB},
+		Bruno Siciliano og Oussama Khatib (red.),
+		Second, completely revised, extended and updated edition,
+		Springer Tracts in Advanced Robotics, vol. 118,
+		Springer International Publishing, Cham, Switzerland,
+		2017,
+		ISBN: 978-3-319-54412-0,
+		DOI: 10.1007/978-3-319-54413-7,
+		URL: \url{http://www.springer.com/series/5208},
+		Note: With 492 Images. Additional material is provided at www.petercorke.com/RVC.
+		
+	\end{thebibliography}
+	
+	
+	
 	\clearpage
 	\appendix
 	\section{MATLAB Code for Localization and Mapping}
