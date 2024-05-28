@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  28 MAY 2024 10:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  28 MAY 2024 10:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1516,81 +1516,51 @@ nav / ug /
 
 [16] [17
 
-] [18] [19] [20]
-Overfull \hbox (0.46739pt too wide) in paragraph at lines 878--878
-[]  \T1/lmtt/m/n/10 % At last we check the distance to goal for whether we have
- reached the end of the path.[] 
- []
-
-[21]
-Overfull \hbox (168.4669pt too wide) in paragraph at lines 878--878
-[]  \T1/lmtt/m/n/10 % Very simple function. We get a new linear and angular vel
-ocity from the controller and output it to the cmd_vel topic.[] 
- []
-
-
-Overfull \hbox (5.71738pt too wide) in paragraph at lines 878--878
-[]  \T1/lmtt/m/n/10 % We use the function quat2angle to transform the angle fro
-m quaternion to yaw in radians[] 
- []
-
-[22]
-Overfull \hbox (126.46703pt too wide) in paragraph at lines 878--878
-[]  \T1/lmtt/m/n/10 [centers, radii, metric] = imfindcircles(imgProcessed, [10 
-100], 'ObjectPolarity', 'dark', 'Sensitivity', 0.85);[] 
- []
-
-
-Overfull \hbox (5.71738pt too wide) in paragraph at lines 878--878
-[]  \T1/lmtt/m/n/10 bestCircleColor = impixel(img, centers(bestCircleIndex, 1),
- centers(bestCircleIndex, 2));[] 
- []
-
-
-Overfull \hbox (47.71725pt too wide) in paragraph at lines 878--878
-[]  \T1/lmtt/m/n/10 if all(bestCircleColor(1, :) >= redThresholdLow) & all(best
-CircleColor(1, :) <= redThresholdHigh)[] 
- []
-
-
-Overfull \hbox (100.2171pt too wide) in paragraph at lines 878--878
-[]  \T1/lmtt/m/n/10 elseif all(bestCircleColor(1, :) >= purpleThresholdLow) & a
-ll(bestCircleColor(1, :) <= purpleThresholdHigh)[] 
- []
-
-[23]
-Overfull \hbox (5.71738pt too wide) in paragraph at lines 878--878
-[]  \T1/lmtt/m/n/10 title(sprintf('Detected Circle: %s (%.2f%% Confidence)', ci
-rcleColor, confidence * 100));[] 
- []
-
-
-Overfull \hbox (16.21735pt too wide) in paragraph at lines 878--878
+] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27]
+Overfull \hbox (16.21735pt too wide) in paragraph at lines 1141--1141
 []  \T1/lmtt/m/n/10 hue_mask = (hsv_image(:,:,1) >= hue_threshold(1)) & (hsv_im
 age(:,:,1) <= hue_threshold(2));[] 
  []
 
 
-Overfull \hbox (126.46703pt too wide) in paragraph at lines 878--878
+Overfull \hbox (126.46703pt too wide) in paragraph at lines 1141--1141
 []  \T1/lmtt/m/n/10 saturation_mask = (hsv_image(:,:,2) >= saturation_threshold
 (1)) & (hsv_image(:,:,2) <= saturation_threshold(2));[] 
  []
 
 
-Overfull \hbox (47.71725pt too wide) in paragraph at lines 878--878
+Overfull \hbox (47.71725pt too wide) in paragraph at lines 1141--1141
 []  \T1/lmtt/m/n/10 value_mask = (hsv_image(:,:,3) >= value_threshold(1)) & (hs
 v_image(:,:,3) <= value_threshold(2));[] 
  []
 
-[24]
+[28]
+Overfull \hbox (16.21735pt too wide) in paragraph at lines 1141--1141
+[]  \T1/lmtt/m/n/10 hue_mask = (hsv_image(:,:,1) >= hue_threshold(1)) & (hsv_im
+age(:,:,1) <= hue_threshold(2));[] 
+ []
+
+
+Overfull \hbox (126.46703pt too wide) in paragraph at lines 1141--1141
+[]  \T1/lmtt/m/n/10 saturation_mask = (hsv_image(:,:,2) >= saturation_threshold
+(1)) & (hsv_image(:,:,2) <= saturation_threshold(2));[] 
+ []
+
+
+Overfull \hbox (47.71725pt too wide) in paragraph at lines 1141--1141
+[]  \T1/lmtt/m/n/10 value_mask = (hsv_image(:,:,3) >= value_threshold(1)) & (hs
+v_image(:,:,3) <= value_threshold(2));[] 
+ []
+
+[29]
 
 pdfTeX warning: pdflatex.exe (file ./SWROB2 Final Project Description 2024.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<SWROB2 Final Project Description 2024.pdf, id=432, 597.55246pt x 845.07718pt>
+<SWROB2 Final Project Description 2024.pdf, id=457, 597.55246pt x 845.07718pt>
 File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
 <use SWROB2 Final Project Description 2024.pdf>
 Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf  used on inp
-ut line 881.
+ut line 1144.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 
 
@@ -1599,7 +1569,7 @@ pdfTeX warning: pdflatex.exe (file ./SWROB2 Final Project Description 2024.pdf)
 File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
 <use SWROB2 Final Project Description 2024.pdf>
 Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf  used on inp
-ut line 881.
+ut line 1144.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 
 
@@ -1609,35 +1579,35 @@ pdfTeX warning: pdflatex.exe (file ./SWROB2 Final Project Description 2024.pdf)
 
 pdfTeX warning: pdflatex.exe (file ./SWROB2 Final Project Description 2024.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<SWROB2 Final Project Description 2024.pdf, id=435, page=1, 597.55246pt x 845.0
+<SWROB2 Final Project Description 2024.pdf, id=460, page=1, 597.55246pt x 845.0
 7718pt>
 File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
 <use SWROB2 Final Project Description 2024.pdf, page 1>
 Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf , page1 used
- on input line 881.
+ on input line 1144.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
 <use SWROB2 Final Project Description 2024.pdf, page 1>
 Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf , page1 used
- on input line 881.
+ on input line 1144.
 (pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
-[25]
+[30]
 File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
 <use SWROB2 Final Project Description 2024.pdf, page 1>
 Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf , page1 used
- on input line 881.
-(pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
-File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
-<use SWROB2 Final Project Description 2024.pdf, page 1>
-Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf , page1 used
- on input line 881.
+ on input line 1144.
 (pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
 File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
 <use SWROB2 Final Project Description 2024.pdf, page 1>
 Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf , page1 used
- on input line 881.
+ on input line 1144.
 (pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
- [26
+File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
+<use SWROB2 Final Project Description 2024.pdf, page 1>
+Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf , page1 used
+ on input line 1144.
+(pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
+ [31
 
  <./SWROB2 Final Project Description 2024.pdf>]
 
@@ -1663,8 +1633,8 @@ Package logreq Info: Writing requests to 'master.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42922 strings out of 474436
- 958032 string characters out of 5742898
+ 42927 strings out of 474436
+ 958067 string characters out of 5742898
  1945190 words of memory out of 5000000
  64500 multiletter control sequences out of 15000+600000
  610600 words of font info for 68 fonts, out of 8000000 for 9000
@@ -1679,9 +1649,9 @@ o/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/aso/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri9.pfb><C:/Users/aso/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/aso/AppDa
 ta/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on master.pdf (27 pages, 773214 bytes).
+Output written on master.pdf (32 pages, 779934 bytes).
 PDF statistics:
- 563 PDF objects out of 1000 (max. 8388607)
- 111 named destinations out of 1000 (max. 500000)
+ 590 PDF objects out of 1000 (max. 8388607)
+ 116 named destinations out of 1000 (max. 500000)
  436 words of extra memory for PDF output out of 10000 (max. 10000000)
 
