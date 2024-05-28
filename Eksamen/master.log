@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  22 MAY 2024 17:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  28 MAY 2024 08:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1144,7 +1144,7 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 [5{C:/Users/aso/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-<fig/fig4.png, id=286, 597.73312pt x 259.56975pt>
+<fig/fig4.png, id=281, 597.73312pt x 259.56975pt>
 File: fig/fig4.png Graphic file (type png)
 <use fig/fig4.png>
 Package pdftex.def Info: fig/fig4.png  used on input line 89.
@@ -1159,17 +1159,17 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 94.
-<fig/fig5.png, id=297, 518.6878pt x 420.06938pt>
+<fig/fig5.png, id=292, 518.6878pt x 420.06938pt>
 File: fig/fig5.png Graphic file (type png)
 <use fig/fig5.png>
 Package pdftex.def Info: fig/fig5.png  used on input line 123.
 (pdftex.def)             Requested size: 141.61081pt x 114.68938pt.
-<fig/fig6.png, id=298, 435.87843pt x 142.28156pt>
+<fig/fig6.png, id=293, 435.87843pt x 142.28156pt>
 File: fig/fig6.png Graphic file (type png)
 <use fig/fig6.png>
 Package pdftex.def Info: fig/fig6.png  used on input line 129.
 (pdftex.def)             Requested size: 141.61081pt x 46.22359pt.
-<fig/fig7.png, id=299, 696.35156pt x 481.04718pt>
+<fig/fig7.png, id=294, 696.35156pt x 481.04718pt>
 File: fig/fig7.png Graphic file (type png)
 <use fig/fig7.png>
 Package pdftex.def Info: fig/fig7.png  used on input line 135.
@@ -1182,7 +1182,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 179--182
  []
 
 [8]
-<fig/fig9.png, id=325, 142.131pt x 542.025pt>
+<fig/fig9.png, id=320, 142.131pt x 542.025pt>
 File: fig/fig9.png Graphic file (type png)
 <use fig/fig9.png>
 Package pdftex.def Info: fig/fig9.png  used on input line 251.
@@ -1191,114 +1191,112 @@ Package pdftex.def Info: fig/fig9.png  used on input line 251.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[9] [10 <./fig/fig9.png>]
-<fig/fig10.png, id=338, 487.8225pt x 450.18187pt>
+[9] [10 <./fig/fig9.png>] [11
+
+] [12
+
+]
+<fig/fig10.png, id=353, 487.8225pt x 450.18187pt>
 File: fig/fig10.png Graphic file (type png)
 <use fig/fig10.png>
-Package pdftex.def Info: fig/fig10.png  used on input line 279.
+Package pdftex.def Info: fig/fig10.png  used on input line 328.
 (pdftex.def)             Requested size: 212.41261pt x 196.01987pt.
-<fig/fig11.png, id=339, 469.755pt x 438.13687pt>
+<fig/fig11.png, id=354, 469.755pt x 438.13687pt>
 File: fig/fig11.png Graphic file (type png)
 <use fig/fig11.png>
-Package pdftex.def Info: fig/fig11.png  used on input line 285.
+Package pdftex.def Info: fig/fig11.png  used on input line 334.
 (pdftex.def)             Requested size: 212.41261pt x 198.11577pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[11
-
-] [12 <./fig/fig10.png> <./fig/fig11.png>] [13]
-Overfull \hbox (3.85545pt too wide) in paragraph at lines 373--374
+ [13 <./fig/fig10.png> <./fig/fig11.png>]
+Overfull \hbox (3.85545pt too wide) in paragraph at lines 371--372
 \T1/lmr/m/n/10 The cre-ation of the prob-a-bilis-tic roadmaps is han-dled by th
 e func-tions \T1/lmtt/m/n/10 createFirstPRM \T1/lmr/m/n/10 and \T1/lmtt/m/n/10 
 createSecondPRM\T1/lmr/m/n/10 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 379--382
+Underfull \hbox (badness 10000) in paragraph at lines 377--380
 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 385--392
+Underfull \hbox (badness 10000) in paragraph at lines 383--390
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--392
+Underfull \hbox (badness 10000) in paragraph at lines 383--390
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--392
+Underfull \hbox (badness 10000) in paragraph at lines 383--390
 
  []
 
 [15] [16
 
 ] [17] [18] [19]
-Overfull \hbox (0.46739pt too wide) in paragraph at lines 854--854
+Overfull \hbox (0.46739pt too wide) in paragraph at lines 852--852
 []  \T1/lmtt/m/n/10 % At last we check the distance to goal for whether we have
  reached the end of the path.[] 
  []
 
 [20]
-Overfull \hbox (168.4669pt too wide) in paragraph at lines 854--854
+Overfull \hbox (168.4669pt too wide) in paragraph at lines 852--852
 []  \T1/lmtt/m/n/10 % Very simple function. We get a new linear and angular vel
 ocity from the controller and output it to the cmd_vel topic.[] 
  []
 
 
-Overfull \hbox (5.71738pt too wide) in paragraph at lines 854--854
+Overfull \hbox (5.71738pt too wide) in paragraph at lines 852--852
 []  \T1/lmtt/m/n/10 % We use the function quat2angle to transform the angle fro
 m quaternion to yaw in radians[] 
  []
 
 [21]
-Overfull \hbox (126.46703pt too wide) in paragraph at lines 854--854
+Overfull \hbox (126.46703pt too wide) in paragraph at lines 852--852
 []  \T1/lmtt/m/n/10 [centers, radii, metric] = imfindcircles(imgProcessed, [10 
 100], 'ObjectPolarity', 'dark', 'Sensitivity', 0.85);[] 
  []
 
 
-Overfull \hbox (5.71738pt too wide) in paragraph at lines 854--854
+Overfull \hbox (5.71738pt too wide) in paragraph at lines 852--852
 []  \T1/lmtt/m/n/10 bestCircleColor = impixel(img, centers(bestCircleIndex, 1),
  centers(bestCircleIndex, 2));[] 
  []
 
 
-Overfull \hbox (47.71725pt too wide) in paragraph at lines 854--854
+Overfull \hbox (47.71725pt too wide) in paragraph at lines 852--852
 []  \T1/lmtt/m/n/10 if all(bestCircleColor(1, :) >= redThresholdLow) & all(best
 CircleColor(1, :) <= redThresholdHigh)[] 
  []
 
 
-Overfull \hbox (100.2171pt too wide) in paragraph at lines 854--854
+Overfull \hbox (100.2171pt too wide) in paragraph at lines 852--852
 []  \T1/lmtt/m/n/10 elseif all(bestCircleColor(1, :) >= purpleThresholdLow) & a
 ll(bestCircleColor(1, :) <= purpleThresholdHigh)[] 
  []
 
 [22]
-Overfull \hbox (5.71738pt too wide) in paragraph at lines 854--854
+Overfull \hbox (5.71738pt too wide) in paragraph at lines 852--852
 []  \T1/lmtt/m/n/10 title(sprintf('Detected Circle: %s (%.2f%% Confidence)', ci
 rcleColor, confidence * 100));[] 
  []
 
 
-Overfull \hbox (16.21735pt too wide) in paragraph at lines 854--854
+Overfull \hbox (16.21735pt too wide) in paragraph at lines 852--852
 []  \T1/lmtt/m/n/10 hue_mask = (hsv_image(:,:,1) >= hue_threshold(1)) & (hsv_im
 age(:,:,1) <= hue_threshold(2));[] 
  []
 
 
-Overfull \hbox (126.46703pt too wide) in paragraph at lines 854--854
+Overfull \hbox (126.46703pt too wide) in paragraph at lines 852--852
 []  \T1/lmtt/m/n/10 saturation_mask = (hsv_image(:,:,2) >= saturation_threshold
 (1)) & (hsv_image(:,:,2) <= saturation_threshold(2));[] 
  []
 
 
-Overfull \hbox (47.71725pt too wide) in paragraph at lines 854--854
+Overfull \hbox (47.71725pt too wide) in paragraph at lines 852--852
 []  \T1/lmtt/m/n/10 value_mask = (hsv_image(:,:,3) >= value_threshold(1)) & (hs
 v_image(:,:,3) <= value_threshold(2));[] 
  []
@@ -1307,11 +1305,11 @@ v_image(:,:,3) <= value_threshold(2));[]
 
 pdfTeX warning: pdflatex.exe (file ./SWROB2 Final Project Description 2024.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<SWROB2 Final Project Description 2024.pdf, id=420, 597.55246pt x 845.07718pt>
+<SWROB2 Final Project Description 2024.pdf, id=414, 597.55246pt x 845.07718pt>
 File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
 <use SWROB2 Final Project Description 2024.pdf>
 Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf  used on inp
-ut line 857.
+ut line 855.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 
 
@@ -1320,7 +1318,7 @@ pdfTeX warning: pdflatex.exe (file ./SWROB2 Final Project Description 2024.pdf)
 File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
 <use SWROB2 Final Project Description 2024.pdf>
 Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf  used on inp
-ut line 857.
+ut line 855.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 
 
@@ -1330,33 +1328,33 @@ pdfTeX warning: pdflatex.exe (file ./SWROB2 Final Project Description 2024.pdf)
 
 pdfTeX warning: pdflatex.exe (file ./SWROB2 Final Project Description 2024.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<SWROB2 Final Project Description 2024.pdf, id=423, page=1, 597.55246pt x 845.0
+<SWROB2 Final Project Description 2024.pdf, id=417, page=1, 597.55246pt x 845.0
 7718pt>
 File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
 <use SWROB2 Final Project Description 2024.pdf, page 1>
 Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf , page1 used
- on input line 857.
+ on input line 855.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
 <use SWROB2 Final Project Description 2024.pdf, page 1>
 Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf , page1 used
- on input line 857.
+ on input line 855.
 (pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
 [24]
 File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
 <use SWROB2 Final Project Description 2024.pdf, page 1>
 Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf , page1 used
- on input line 857.
+ on input line 855.
 (pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
 File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
 <use SWROB2 Final Project Description 2024.pdf, page 1>
 Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf , page1 used
- on input line 857.
+ on input line 855.
 (pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
 File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
 <use SWROB2 Final Project Description 2024.pdf, page 1>
 Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf , page1 used
- on input line 857.
+ on input line 855.
 (pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
  [25
 
@@ -1368,21 +1366,14 @@ enddocument/afterlastpage: lastpage setting LastPage.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-Package rerunfilecheck Warning: File `master.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `master.out':
-(rerunfilecheck)             Before: FA7489F9FC1B3EC3B0112569451366A9;8110
-(rerunfilecheck)             After:  B621F2C15EF6CBA8A30C3BC9E4362FBD;8064.
+Package rerunfilecheck Info: File `master.out' has not changed.
+(rerunfilecheck)             Checksum: 5E26AAD2E33C5733D878AA6216AA4132;7769.
  ) 
 Here is how much of TeX's memory you used:
- 35762 strings out of 474436
- 813179 string characters out of 5742898
+ 35760 strings out of 474436
+ 813149 string characters out of 5742898
  1944190 words of memory out of 5000000
- 57395 multiletter control sequences out of 15000+600000
+ 57394 multiletter control sequences out of 15000+600000
  606337 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,17n,110p,742b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1394,9 +1385,9 @@ s/aso/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/as
 o/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri9.pfb><C:/Users/aso/A
 ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/aso/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on master.pdf (26 pages, 751235 bytes).
+Output written on master.pdf (26 pages, 750050 bytes).
 PDF statistics:
- 546 PDF objects out of 1000 (max. 8388607)
- 107 named destinations out of 1000 (max. 500000)
- 436 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 540 PDF objects out of 1000 (max. 8388607)
+ 106 named destinations out of 1000 (max. 500000)
+ 428 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -256,7 +256,7 @@
 	Localization is a fundamental aspect of autonomous robotics, enabling a robot to determine its position within an environment. In the context of the final project, the TurtleBot must accurately identify its location within the Shannon building to navigate between specified points and perform tasks effectively.
 	
 	\subsection{Project Requirements and Localization Strategy}
-	The project requires the TurtleBot to start at a fixed location (Location A) and autonomously travel to Locations B and C to perform specific tasks. The sequence of tasks includes object recognition and navigation around obstacles, demanding precise and reliable localization capabilities. The key steps involving localization are:
+	The project requires the TurtleBot to start at a fixed location (Location A) and autonomously travel to Locations B and C to perform specific tasks. The sequence of tasks includes object recognition and navigation around obstacles, demanding a reliable localization capabilities. The key steps involving localization are:
 	
 	\begin{enumerate}
 		\item \textbf{Initial Positioning:} The robot starts from Location A. Initial localization is straightforward, as the starting point is predefined and known.
@@ -273,35 +273,12 @@
 		\item \textbf{Probabilistic Roadmap (PRM):} Used for path planning, PRM helps in determining a feasible path from one location to another by randomly sampling the environment and creating a roadmap of possible paths.
 		\item \textbf{Sensors:} The TurtleBot uses a combination of sensors, including LiDAR for obstacle detection and a camera for visual identification of the target markers (red and purple circles).
 	\end{itemize}
-	\begin{figure}[!h]
-		\centering
-		\begin{subfigure}[b]{0.45\textwidth}
-			\includegraphics[width=\textwidth]{fig/fig10.png}
-			\caption{PRM with mobileRobotPRM(map,1000)}
-			\label{fig:fig10}
-		\end{subfigure}
-		\hfill
-		\begin{subfigure}[b]{0.45\textwidth}
-			\includegraphics[width=\textwidth]{fig/fig11.png}
-			\caption{PRM with mobileRobotPRM(map,500)}
-			\label{fig:fig11}
-		\end{subfigure}
-	\end{figure}
 	\subsection{Challenges and Considerations}
 	\begin{itemize}
-		\item \textbf{Dynamic Obstacles:} The ability to avoid dynamic obstacles requires the robot's localization system to be highly responsive and accurate in real-time.
+		\item \textbf{Dynamic Obstacles:} The ability to avoid dynamic obstacles requires the robot's localization system to be able to detect in real-time.
 		\item \textbf{Environmental Factors:} Changes in the environment, such as moved furniture or altered lighting conditions, can pose challenges to localization accuracy.
 	\end{itemize}
-	
-	\subsection{Implementation of TurtleBot3's Map generating}
-	The MATLAB code for generating the PRM can be found in the Appendix~\ref{appendix:code}. In these two picture we can see all the back which is static obstacles where the blue color is all the strings between possible waypoints. Each waypoint are connected to it's nearest neighbor by a straight line and are not crossing any obstacles. 
-	\begin{itemize}
-		\item Step 1: Defining the Binary Occupancy Map by using the function binaryOccupancyMap(29.3,28.3,10) with the following values.
-		\item Step 2: For making static obstacles in the map then the following following has been used setOccupancy(map,[1,1],walls,'grid'). 
-		\item Step 2: we create 500/1000 node points
-		\item Step 3: finding the shortest path by using the function findpath(PRM,startLocation,endLocation)
-	\end{itemize}
-	
+	\clearpage
 	\section{Mapping}
 	Mapping is a crucial capability in robotics, particularly for autonomous navigation tasks. It involves creating a model of the robot's environment that can be used to plan and execute movements accurately. In the context of this project, the TurtleBot is required to map the Shannon building in order to navigate effectively and autonomously perform tasks in Locations B and C.
 	
@@ -335,9 +312,30 @@
 		\item \textbf{Safety and Navigation:} Effective mapping ensures that the TurtleBot avoids collisions and navigates safely around people and objects.
 	\end{itemize}
 	In summary, mapping is a foundational aspect of this project, enabling the TurtleBot to perform its tasks with high efficiency and precision. The ability to dynamically interact with the environment through continuous mapping and localization adjustments is key to the success of the TurtleBot's operations in the Shannon building.
-	
+
 	\subsection{Implementation Of Mapping}
-	The MATLAB code in Appendix~\ref{appendix:code} demonstrates how the map was created.
+	The MATLAB code for generating the PRM can be found in the Appendix~\ref{appendix:code}. In these two picture we can see all the back which is static obstacles where the blue color is all the strings between possible waypoints. Each waypoint are connected to it's nearest neighbor by a straight line and are not crossing any obstacles. 
+	\begin{itemize}
+		\item Step 1: Defining the Binary Occupancy Map by using the function binaryOccupancyMap(29.3,28.3,10) with the following values.
+		\item Step 2: For making static obstacles in the map, following setOccupancy(map,[1,1],walls,'grid') has been used. 
+		\item Step 3: The function mobileRobotRPM is taking two arguments, occupancy map and number of node points. The map in a) is created with 1000 node points whereas the map in b) has 500 node points. 
+		\item Step 4: For finding the shortest path by we use the function findpath(PRM,startLocation,endLocation)
+	\end{itemize}
+	
+		\begin{figure}[!h]
+		\centering
+		\begin{subfigure}[b]{0.45\textwidth}
+			\includegraphics[width=\textwidth]{fig/fig10.png}
+			\caption{PRM with mobileRobotPRM(map,1000)}
+			\label{fig:fig10}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.45\textwidth}
+			\includegraphics[width=\textwidth]{fig/fig11.png}
+			\caption{PRM with mobileRobotPRM(map,500)}
+			\label{fig:fig11}
+		\end{subfigure}
+	\end{figure}
 	
 	\section{Obstacle Avoidance}
 	A range of techniques were implemented to handle both static and dynamic obstacles. These techniques ensure that the robot can navigate safely and efficiently in a dynamic environment such as the Shannon building.
