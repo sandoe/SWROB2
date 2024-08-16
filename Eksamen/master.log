@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  28 MAY 2024 10:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  28 MAY 2024 14:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1397,7 +1397,7 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 [5{C:/Users/aso/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-<fig/fig4.png, id=286, 597.73312pt x 259.56975pt>
+<fig/fig4.png, id=276, 597.73312pt x 259.56975pt>
 File: fig/fig4.png Graphic file (type png)
 <use fig/fig4.png>
 Package pdftex.def Info: fig/fig4.png  used on input line 91.
@@ -1416,17 +1416,17 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 
 LaTeX Warning: Citation 'corke2017' on page 7 undefined on input line 111.
 
-<fig/fig5.png, id=297, 518.6878pt x 420.06938pt>
+<fig/fig5.png, id=287, 518.6878pt x 420.06938pt>
 File: fig/fig5.png Graphic file (type png)
 <use fig/fig5.png>
 Package pdftex.def Info: fig/fig5.png  used on input line 125.
 (pdftex.def)             Requested size: 141.61081pt x 114.68938pt.
-<fig/fig6.png, id=298, 435.87843pt x 142.28156pt>
+<fig/fig6.png, id=288, 435.87843pt x 142.28156pt>
 File: fig/fig6.png Graphic file (type png)
 <use fig/fig6.png>
 Package pdftex.def Info: fig/fig6.png  used on input line 131.
 (pdftex.def)             Requested size: 141.61081pt x 46.22359pt.
-<fig/fig7.png, id=299, 696.35156pt x 481.04718pt>
+<fig/fig7.png, id=289, 696.35156pt x 481.04718pt>
 File: fig/fig7.png Graphic file (type png)
 <use fig/fig7.png>
 Package pdftex.def Info: fig/fig7.png  used on input line 137.
@@ -1450,117 +1450,140 @@ Underfull \hbox (badness 10000) in paragraph at lines 177--180
 LaTeX Warning: Citation 'corke2017' on page 8 undefined on input line 200.
 
 [8]
-<fig/fig9.png, id=325, 142.131pt x 542.025pt>
+<fig/fig9.png, id=315, 142.131pt x 542.025pt>
 File: fig/fig9.png Graphic file (type png)
 <use fig/fig9.png>
 Package pdftex.def Info: fig/fig9.png  used on input line 249.
-(pdftex.def)             Requested size: 163.17654pt x 622.30661pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[9] [10 <./fig/fig9.png>] [11
+(pdftex.def)             Requested size: 155.77116pt x 594.06242pt.
+ [9] [10 <./fig/fig9.png>] [11
 
 ]
 
-LaTeX Warning: Citation 'corke2017' on page 12 undefined on input line 283.
+LaTeX Warning: Citation 'corke2017' on page 12 undefined on input line 284.
 
 [12
 
 ]
-<fig/fig10.png, id=358, 487.8225pt x 450.18187pt>
+<fig/fig10.png, id=348, 487.8225pt x 450.18187pt>
 File: fig/fig10.png Graphic file (type png)
 <use fig/fig10.png>
-Package pdftex.def Info: fig/fig10.png  used on input line 328.
-(pdftex.def)             Requested size: 212.41261pt x 196.01987pt.
-<fig/fig11.png, id=359, 469.755pt x 438.13687pt>
+Package pdftex.def Info: fig/fig10.png  used on input line 330.
+(pdftex.def)             Requested size: 169.93073pt x 156.81726pt.
+<fig/fig11.png, id=349, 469.755pt x 438.13687pt>
 File: fig/fig11.png Graphic file (type png)
 <use fig/fig11.png>
-Package pdftex.def Info: fig/fig11.png  used on input line 334.
-(pdftex.def)             Requested size: 212.41261pt x 198.11577pt.
+Package pdftex.def Info: fig/fig11.png  used on input line 337.
+(pdftex.def)             Requested size: 169.93073pt x 158.49129pt.
  [13 <./fig/fig10.png> <./fig/fig11.png>]
-Overfull \hbox (3.85545pt too wide) in paragraph at lines 371--372
-\T1/lmr/m/n/10 The cre-ation of the prob-a-bilis-tic roadmaps is han-dled by th
-e func-tions \T1/lmtt/m/n/10 createFirstPRM \T1/lmr/m/n/10 and \T1/lmtt/m/n/10 
-createSecondPRM\T1/lmr/m/n/10 .
+<fig/fig13.png, id=358, 258.9675pt x 210.7875pt>
+File: fig/fig13.png Graphic file (type png)
+<use fig/fig13.png>
+Package pdftex.def Info: fig/fig13.png  used on input line 400.
+(pdftex.def)             Requested size: 127.44885pt x 103.73706pt.
+<fig/fig14.png, id=359, 454.69875pt x 197.23688pt>
+File: fig/fig14.png Graphic file (type png)
+<use fig/fig14.png>
+Package pdftex.def Info: fig/fig14.png  used on input line 406.
+(pdftex.def)             Requested size: 127.44885pt x 55.28311pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 415--417
+
  []
 
-[14
+
+Underfull \hbox (badness 10000) in paragraph at lines 415--417
+
+ []
+
+[14{C:/Users/aso/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc
+}{C:/Users/aso/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{
+C:/Users/aso/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
+[15 <./fig/fig13.png> <./fig/fig14.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 506--509
+
+ []
+
+[16]
+<fig/fig12.png, id=386, 473.77pt x 659.46375pt>
+File: fig/fig12.png Graphic file (type png)
+<use fig/fig12.png>
+Package pdftex.def Info: fig/fig12.png  used on input line 527.
+(pdftex.def)             Requested size: 188.8096pt x 262.8148pt.
+ [17] [18 <./fig/fig12.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 533--540
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 533--540
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 533--540
+
+ []
+
+[19
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 377--380
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 383--390
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 383--390
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 383--390
-
- []
-
-[15]
-Underfull \hbox (badness 5490) in paragraph at lines 416--421
+Underfull \hbox (badness 5490) in paragraph at lines 568--573
 []\T1/lmr/m/n/10 MathWorks, \T1/lmr/m/it/10 Pure Pur-suit Con-troller\T1/lmr/m/
 n/10 , 2024, URL: []$\T1/lmtt/m/n/10 https : / / se . mathworks . com / help / 
 nav / ug /
  []
 
-[16] [17
+[20
 
-] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27]
-Overfull \hbox (16.21735pt too wide) in paragraph at lines 1141--1141
+] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30]
+Overfull \hbox (16.21735pt too wide) in paragraph at lines 1290--1290
 []  \T1/lmtt/m/n/10 hue_mask = (hsv_image(:,:,1) >= hue_threshold(1)) & (hsv_im
 age(:,:,1) <= hue_threshold(2));[] 
  []
 
 
-Overfull \hbox (126.46703pt too wide) in paragraph at lines 1141--1141
+Overfull \hbox (126.46703pt too wide) in paragraph at lines 1290--1290
 []  \T1/lmtt/m/n/10 saturation_mask = (hsv_image(:,:,2) >= saturation_threshold
 (1)) & (hsv_image(:,:,2) <= saturation_threshold(2));[] 
  []
 
 
-Overfull \hbox (47.71725pt too wide) in paragraph at lines 1141--1141
+Overfull \hbox (47.71725pt too wide) in paragraph at lines 1290--1290
 []  \T1/lmtt/m/n/10 value_mask = (hsv_image(:,:,3) >= value_threshold(1)) & (hs
 v_image(:,:,3) <= value_threshold(2));[] 
  []
 
-[28]
-Overfull \hbox (16.21735pt too wide) in paragraph at lines 1141--1141
+[31]
+Overfull \hbox (16.21735pt too wide) in paragraph at lines 1290--1290
 []  \T1/lmtt/m/n/10 hue_mask = (hsv_image(:,:,1) >= hue_threshold(1)) & (hsv_im
 age(:,:,1) <= hue_threshold(2));[] 
  []
 
 
-Overfull \hbox (126.46703pt too wide) in paragraph at lines 1141--1141
+Overfull \hbox (126.46703pt too wide) in paragraph at lines 1290--1290
 []  \T1/lmtt/m/n/10 saturation_mask = (hsv_image(:,:,2) >= saturation_threshold
 (1)) & (hsv_image(:,:,2) <= saturation_threshold(2));[] 
  []
 
 
-Overfull \hbox (47.71725pt too wide) in paragraph at lines 1141--1141
+Overfull \hbox (47.71725pt too wide) in paragraph at lines 1290--1290
 []  \T1/lmtt/m/n/10 value_mask = (hsv_image(:,:,3) >= value_threshold(1)) & (hs
 v_image(:,:,3) <= value_threshold(2));[] 
  []
 
-[29]
+[32]
 
 pdfTeX warning: pdflatex.exe (file ./SWROB2 Final Project Description 2024.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<SWROB2 Final Project Description 2024.pdf, id=457, 597.55246pt x 845.07718pt>
+<SWROB2 Final Project Description 2024.pdf, id=483, 597.55246pt x 845.07718pt>
 File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
 <use SWROB2 Final Project Description 2024.pdf>
 Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf  used on inp
-ut line 1144.
+ut line 1293.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 
 
@@ -1569,7 +1592,7 @@ pdfTeX warning: pdflatex.exe (file ./SWROB2 Final Project Description 2024.pdf)
 File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
 <use SWROB2 Final Project Description 2024.pdf>
 Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf  used on inp
-ut line 1144.
+ut line 1293.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 
 
@@ -1579,35 +1602,35 @@ pdfTeX warning: pdflatex.exe (file ./SWROB2 Final Project Description 2024.pdf)
 
 pdfTeX warning: pdflatex.exe (file ./SWROB2 Final Project Description 2024.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<SWROB2 Final Project Description 2024.pdf, id=460, page=1, 597.55246pt x 845.0
+<SWROB2 Final Project Description 2024.pdf, id=486, page=1, 597.55246pt x 845.0
 7718pt>
 File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
 <use SWROB2 Final Project Description 2024.pdf, page 1>
 Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf , page1 used
- on input line 1144.
+ on input line 1293.
 (pdftex.def)             Requested size: 597.551pt x 845.07512pt.
 File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
 <use SWROB2 Final Project Description 2024.pdf, page 1>
 Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf , page1 used
- on input line 1144.
+ on input line 1293.
 (pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
-[30]
+[33]
 File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
 <use SWROB2 Final Project Description 2024.pdf, page 1>
 Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf , page1 used
- on input line 1144.
-(pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
-File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
-<use SWROB2 Final Project Description 2024.pdf, page 1>
-Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf , page1 used
- on input line 1144.
+ on input line 1293.
 (pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
 File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
 <use SWROB2 Final Project Description 2024.pdf, page 1>
 Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf , page1 used
- on input line 1144.
+ on input line 1293.
 (pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
- [31
+File: SWROB2 Final Project Description 2024.pdf Graphic file (type pdf)
+<use SWROB2 Final Project Description 2024.pdf, page 1>
+Package pdftex.def Info: SWROB2 Final Project Description 2024.pdf , page1 used
+ on input line 1293.
+(pdftex.def)             Requested size: 562.1644pt x 795.0303pt.
+ [34
 
  <./SWROB2 Final Project Description 2024.pdf>]
 
@@ -1622,7 +1645,7 @@ L3 programming layer <2024-02-20>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 7CBB8C004933C980D54993D785FFD2F0;7983.
+(rerunfilecheck)             Checksum: DA103CC2DB6EC72998F4CAB11D33E038;7663.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                master
@@ -1633,25 +1656,28 @@ Package logreq Info: Writing requests to 'master.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42927 strings out of 474436
- 958067 string characters out of 5742898
- 1945190 words of memory out of 5000000
- 64500 multiletter control sequences out of 15000+600000
- 610600 words of font info for 68 fonts, out of 8000000 for 9000
+ 42968 strings out of 474436
+ 958711 string characters out of 5742898
+ 1944190 words of memory out of 5000000
+ 64526 multiletter control sequences out of 15000+600000
+ 616573 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,17n,110p,742b,1506s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/aso/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb>
 <C:/Users/aso/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C
 :/Users/aso/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb><C:/U
-sers/aso/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/User
-s/aso/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/as
-o/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/aso/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri9.pfb><C:/Users/aso/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/aso/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on master.pdf (32 pages, 779934 bytes).
+sers/aso/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Use
+rs/aso/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/
+aso/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/aso/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/aso/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/aso/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri9.pfb><C:/Users/aso/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/aso/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/aso/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
+Output written on master.pdf (35 pages, 977532 bytes).
 PDF statistics:
- 590 PDF objects out of 1000 (max. 8388607)
- 116 named destinations out of 1000 (max. 500000)
- 436 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 635 PDF objects out of 1000 (max. 8388607)
+ 126 named destinations out of 1000 (max. 500000)
+ 435 words of extra memory for PDF output out of 10000 (max. 10000000)
 

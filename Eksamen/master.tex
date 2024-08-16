@@ -208,7 +208,7 @@
 	\end{itemize}
 	
 	\subsection{Implementation of Circle Detection Algorithm}
-	To be making a complete overview of the code used for detecting both red and purple circles will take too much space and therefore we advice you to be reading the Appendix~\ref{appendix:code} for a more detailed explanation. In this section we will cover the steps we go through for detecting both colors by using a flowchart.
+	To be making a complete overview of the code used for detecting both red and purple circles will take too much space and therefore we advice you to be reading the Appendix~\ref{appendix:code} for a more detailed explanation. In this section we will cover the steps we go through for detecting both colors by using a flowchart and State Machine.
 	\begin{itemize}
 		\item Step 1: receiving from subscription of the topic "/usb\_cam/image\_raw/compressed"
 		
@@ -244,10 +244,11 @@
 		
 		\item Step 17: End.
 	\end{itemize}
-	\begin{figure}[!h]
+	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=.25\textheight]{fig/fig9.png}
-		\caption{Flowchart for the color detection}
+		\includegraphics[width=.33\textwidth]{fig/fig9.png}
+		\caption{Flowchart (FC)}
+		\label{fig:combined}
 	\end{figure}
 	\clearpage
 	\section{Localization}
@@ -325,18 +326,20 @@
 		\begin{figure}[!h]
 		\centering
 		\begin{subfigure}[b]{0.45\textwidth}
-			\includegraphics[width=\textwidth]{fig/fig10.png}
+			\centering
+			\includegraphics[width=.8\textwidth]{fig/fig10.png}
 			\caption{PRM with mobileRobotPRM(map,1000)}
 			\label{fig:fig10}
 		\end{subfigure}
 		\hfill
 		\begin{subfigure}[b]{0.45\textwidth}
-			\includegraphics[width=\textwidth]{fig/fig11.png}
+			\centering
+			\includegraphics[width=.8\textwidth]{fig/fig11.png}
 			\caption{PRM with mobileRobotPRM(map,500)}
 			\label{fig:fig11}
 		\end{subfigure}
 	\end{figure}
-	\clearpage
+	
 	\section{Obstacle Avoidance}
 	A range of techniques were implemented to handle both static and dynamic obstacles. These techniques ensure that the robot can navigate safely and efficiently in a dynamic environment such as the Shannon building.
 	
@@ -352,8 +355,143 @@
 	\subsubsection{Wall Following}
 	The function \texttt{follow\_wall} uses LiDAR data to find and follow walls. The robot adjusts its course to maintain a certain distance from the wall, helping to avoid collision risks with static obstacles. This method ensures the robot navigates effectively along corridors and around fixed objects.
 	
+	\paragraph{Implementing Wall following}
+	The Wall following algorithm starts with the initialization of the robot's position, followed by a while loop that continues to execute as long as the norm of the difference between the current position and the start position is smaller than the driving distance.
+	
+	\[
+	|\text{current position} - \text{start position}| < \text{driving distance}
+	\]
+	
+	Inside the while loop, the algorithm scans for obstacles. If any obstacles are found, a subroutine is started to handle the dynamic obstacles; otherwise, the algorithm proceeds to collect and convert data from the LiDAR sensor. This data is converted to Cartesian coordinates to facilitate comparison of positions.
+	
+	\[
+	\text{LiDAR data} \rightarrow \text{Cartesian coordinates}
+	\]
+	
+	Once the data is in Cartesian coordinates, it is filtered to retain only the points that are to the left of the robot (i.e., points with positive y-values). This filtered data is then used to perform a linear regression, which fits a line to the detected wall points.
+	
+	\[
+	\text{Filtered data} \rightarrow \text{Linear regression}
+	\]
+	
+	The coefficients obtained from the linear regression are used to define an aim point that is 1.0 meters away from the wall and 1 meter ahead of the robot. This aim point serves as the target for the robot to follow.
+	
+	\[
+	\text{Aim point} = \left(1, \left(\text{Coefficient}_2 \cdot 1 + \text{Coefficient}_1\right) - 1\right)
+	\]
+	
+	The Pure Pursuit controller is then set with this aim point as the waypoint. The controller computes the required linear and angular velocities to steer the robot towards the aim point.
+	
+	\[
+	\text{Controller waypoints} \rightarrow \text{Compute velocities}
+	\]
+	
+	These computed velocities are sent to the robot to update its motion. The robot's current position is then updated, and the while loop continues to execute until the robot has traveled the specified driving distance.
+	
+	\[
+	\text{Update velocities} \rightarrow \text{Update position}
+	\]
+	
+	In summary, the Wall following algorithm continuously adjusts the robot's path to maintain a set distance from the wall while avoiding obstacles. It uses LiDAR data for environmental perception, linear regression for wall detection, and the Pure Pursuit controller for path following.
+	
+	\begin{figure}[!h]
+		\begin{subfigure}{0.45\textwidth}
+			\centering
+			\includegraphics[width=.6\textwidth]{fig/fig13.png}
+			\caption{Calculation of look ahead point position from the wall}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}{0.45\textwidth}
+			\centering
+			\includegraphics[width=.6\textwidth]{fig/fig14.png}
+			\caption{Obstacles avoidence zones}
+		\end{subfigure}
+	\end{figure}
+	
 	\subsection{Dynamic Obstacles}
 	Dynamic obstacles are elements in the environment that can change position over time, such as people or other robots. To handle these, real-time adjustments based on sensor data were implemented:
+	
+	\paragraph{Implementing Obstacle Avoidance}
+	The obstacle avoidance algorithm is crucial for enabling the robot to navigate safely by detecting and circumventing dynamic obstacles in its path. The process starts with the robot scanning its environment using a LiDAR sensor to gather data on surrounding objects.
+	\\\\
+	\paragraph{Implementing Obstacle Avoidance}
+	The obstacle avoidance algorithm is implemented as two processes. One for detecting the obstacle and one for handling it:	
+	\begin{itemize}
+		\item \textbf{Receive and Convert LiDAR Data:}
+		\begin{itemize}
+			\item The function \texttt{checkForObstacle} begins by receiving data from the LiDAR sensor and converting it into Cartesian coordinates.
+			\[
+			\text{scan} = \text{receive(scansub)}
+			\]
+			\[
+			\text{cart} = \text{readCartesian(scan)}
+			\]
+			\[
+			x = \text{cart(:, 1)} \quad \text{(x-positions)}
+			\]
+			\[
+			d = \text{cart(:, 2)} \quad \text{(y-positions)}
+			\]
+		\end{itemize}
+		
+		\item \textbf{Filter Data Points:}
+		\begin{itemize}
+			\item The function filters the data points to identify potential obstacles in a specific range around the robot.
+			\[
+			\text{filtered\_indices} = (x \geq 0.1) \ \&\ (d \leq 0.3) \ \&\ (d \geq -0.3)
+			\]
+			\[
+			x_{\text{filtered}} = x[\text{filtered\_indices}]
+			\]
+			\[
+			d_{\text{filtered}} = d[\text{filtered\_indices}]
+			\]
+		\end{itemize}
+		
+		\item \textbf{Determine Obstacle position:}
+		\begin{itemize}
+			\item The filtered points are then analyzed to determine the position of the obstacle. If any points are very close in front of the robot, the obstacle is set to \texttt{STOPSTACLE}. If points are to the left or right, the obstacle is classified accordingly.
+			\[
+			\text{if any}(x_{\text{filtered}} \leq 0.3) \rightarrow \text{obstacle\_type} = \text{STOPSTACLE}
+			\]
+			\[
+			\text{elseif any}(x_{\text{filtered}} < 1 \ \&\ d_{\text{filtered}} > 0) \rightarrow \text{obstacle\_type} = \text{LEFT\_OBSTACLE}
+			\]
+			\[
+			\text{elseif any}(x_{\text{filtered}} < 1 \ \&\ d_{\text{filtered}} \leq 0) \rightarrow \text{obstacle\_type} = \text{RIGHT\_OBSTACLE}
+			\]
+		\end{itemize}
+		
+		\item \textbf{Handle Obstacles:}
+		\begin{itemize}
+			\item Upon detecting an obstacle, the \texttt{HandleObstacle} function is invoked. This function takes the the position of detected obstacle, the current velocity publisher and LiDAR subscriber as inputs. The robot's response depends on the position of the obstacle detected:
+			\begin{itemize}
+				\item STOPSTACLE: The robot moves backward to avoid a collision.
+				\[
+				\text{update\_vel}(-0.5, 0, \text{vel\_pub})
+				\]
+				
+				\item RIGHT\_OBSTACLE: The robot turns left to steer away from the obstacle on its right.
+				\[
+				\text{update\_vel}(0.1, 1, \text{vel\_pub})
+				\]
+				
+				\item LEFT\_OBSTACLE: The robot turns right to steer away from the obstacle on its left.
+				\[
+				\text{update\_vel}(0.1, -1, \text{vel\_pub})
+				\]
+			\end{itemize}
+		\end{itemize}
+		
+		\item \textbf{Continuous Checking:}
+		\begin{itemize}
+			\item The function continues to check for obstacles and adjusts the robot's path until the obstacle is cleared. This dynamic adjustment ensures that the robot can safely navigate through its environment without collisions.
+		\end{itemize}
+		
+	\end{itemize}
+	
+	In summary, the obstacle avoidance algorithm continuously scans for obstacles, finding the position of obstacles and dynamically adjusts the robot's path using predefined maneuvers.
+	
 	
 	\subsubsection{Real-time LiDAR Data}
 	The LiDAR sensor continuously collects data about the environment around the robot. This data is used to identify both static and dynamic obstacles in real-time.
@@ -364,21 +502,33 @@
 	\subsubsection{Aiming Point Calculation}
 	The robot defines an aiming point that is safe from obstacles and adjusts its course to reach this point. This mechanism ensures that the robot can navigate safely around both static and dynamic obstacles.
 	
-	\subsection{Implementation Details}
-	Here is an overview of the implementation of obstacle avoidance in the code. For the complete code, please refer to the appendix under the specified function names.
-	
-	\subsubsection{PRM Generation}
-	The creation of the probabilistic roadmaps is handled by the functions \texttt{createFirstPRM} and \texttt{createSecondPRM}. These functions generate maps and paths that the robot can follow while avoiding static obstacles.
-	
-	\subsubsection{Wall Following}
-	The \texttt{follow\_wall} function is used to follow walls and avoid obstacles dynamically. It uses real-time LiDAR data to adjust the robot's path.
-	
 	\subsubsection{Circle Detection and Path Adjustment}
 	The functions \texttt{look\_for\_circle} and \texttt{drive\_to\_circle\_and\_take\_picture} handle the detection of target objects (circles) and adjust the robot's path accordingly to avoid obstacles while approaching these targets.
 	\\\\
 	This combination of techniques and real-time data ensures that the robot can navigate in the given environment, handle both static and dynamic obstacles, and complete its tasks.
 	
-
+	\section{Solution overview}
+	Our solution to the exam task takes advantage of what we learned in a few of the earlier tasks we have done in this course.
+	
+	\subsection*{Drive to section B}
+	For general path-planning we have used PRM. We never got a slam map of the Shannon building, so unfortunately this is based on a handdrawn map, however while not being the most sophisticated solution, this turned out to work okay, while still posing a couple of challenges that will come up later. We use PRM as the first part of the program to get from section A to B since there is a section where there are a couple of “holes” in the wall due to doors in the wall. 
+	
+	\subsection*{Look for red circle}
+	Once we have reached section B, our follow\_wall function takes over, which will be described in greater detail in another section of the report. We drive along the wall for 1m and then turn to look at the wall to see if the red circle is along the wall, if it is, we drive towards it until we are 0.5m from the wall and take a picture of it before continuing.
+	
+	\subsection*{Drive to section C}
+	This is when we started having some issues with the PRM method, since we ideally wanted to use a PRM path to drive all the way to section C. This however turned out to be very unreliable and the robots localization would of course be more and more inaccurate the further from the start point we got, so we opted for an arguably more boring, but much more accurate method and used a combination of  PRM and follow wall. We use a PRM path to get to the opening of the corridor and then follow the right wall of the corridor until we are in section C.
+	
+	\subsection*{Look for purple circle}
+	When section C has been reached we use a modified version of the find\_red\_circle function since the purple circle could be on both walls in section C. Instead of turning only to one wall and taking a picture, we instead turn first one way, and then the other so we can check both walls.
+	Once the purple circle has been found we drive to it at and take a picture, like with the red circle.
+	\begin{figure}
+		\centering
+		\includegraphics[width=.4\textwidth]{fig/fig12.png}
+		\caption{State Machine (SM)}
+		\label{fig:fig12}
+	\end{figure}
+	\clearpage
 	\section{Discussion}
 	On the demo day, the robot successfully demonstrated the localization and navigation process using PRM and Pure Pursuit. Initially, the robot generated a probabilistic roadmap (PRM) to model the Shannon building environment. With this roadmap, it planned a route from Location A to Location B and utilized the Pure Pursuit controller to navigate along the planned path. Upon reaching Location B, the robot successfully detected a red circle on the wall, approached it, and took a picture as required.
 	\\\\
@@ -387,16 +537,18 @@
 	Upon arrival at Location C, the robot failed to detect the purple circle. This failure was likely due to insufficient tuning of the color detection thresholds, compounded by challenging lighting conditions that hindered the camera's ability to distinguish the purple color accurately.
 	\\\\
 	An important consideration for future improvements is the management of sensor data processing. In the current implementation, all sensor data processing runs within a single thread. This can lead to delays and reduced responsiveness, especially when handling real-time data from multiple sensors. To enhance the robot's performance, all sensor-related tasks could be run in separate threads. This multithreading approach would allow for more efficient and timely processing of sensor data, leading to better obstacle detection and avoidance, as well as more accurate localization and navigation.
-	
 	\section{Conclusion}
 	The project successfully demonstrated autonomous navigation and object detection capabilities, despite several challenges. The primary issues encountered included difficulties with color detection thresholds and environmental factors such as lighting and glass partitions. To improve the system, future work could focus on:
 	
 	\begin{itemize}
 		\item \textbf{Exploring Alternative Map generation like SLAM:} Implementing Simultaneous Localization and Mapping (SLAM) could provide more accurate and dynamic mapping and localization.
 		\item \textbf{Enhanced Circle Detection:} Spending more time fine-tuning the circle detection algorithm and adjusting thresholds to account for varying lighting conditions.
-		\item \textbf{Exploring Alternative Path Planning Methods:} Investigating other path-planning algorithms such as Bug0, Bug1, and Bug2 to enhance obstacle avoidance and navigation efficiency.
+		\item \textbf{Exploring Alternative Path Planning Methods:} Investigating other path-planning algorithms to enhance navigation efficiency.
+		\item \textbf{Investigating Advanced Obstacle Avoidance Techniques:} Exploring obstacle avoidance algorithms such as Bug0, Bug1, and Bug2 to improve real-time navigation around obstacles.
 	\end{itemize}
+
 	Despite the hardware challenges, the robot successfully completed its tasks, demonstrating robust localization and navigation capabilities. The experience highlighted the importance of adapting to environmental conditions and the potential for further improvements in autonomous robotics.
+	\clearpage
 	\begin{thebibliography}{9}
 		
 		\bibitem{corke2017}
@@ -420,10 +572,7 @@
 		Note: Accessed: 2024-05-28.
 		
 	\end{thebibliography}
-	
-	
-	
-	\clearpage
+
 	\appendix
 	\section{MATLAB Code for Localization and Mapping}
 	\label{appendix:code}
@@ -615,7 +764,7 @@
 		mdl = fitlm(x,d);
 		coef=mdl.Coefficients.Estimate;
 		
-		%Defining a point to aim for 0.5 meters out from the wall and 1 meter ahead
+		%Defining a point to aim for 1.0 meters out from the wall and 1 meter ahead
 		aim_point = [1 (coef(2)*1+coef(1))-1];
 		
 		%Setting the controller to go towards the aim-point

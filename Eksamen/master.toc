@@ -27,20 +27,21 @@
 \contentsline {subsection}{\numberline {8.3}Challenges in Effective Mapping}{12}{subsection.8.3}%
 \contentsline {subsection}{\numberline {8.4}Applications of Mapping}{12}{subsection.8.4}%
 \contentsline {subsection}{\numberline {8.5}Implementation Of Mapping}{13}{subsection.8.5}%
-\contentsline {section}{\numberline {9}Obstacle Avoidance}{14}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Static Obstacles}{14}{subsection.9.1}%
+\contentsline {section}{\numberline {9}Obstacle Avoidance}{13}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Static Obstacles}{13}{subsection.9.1}%
 \contentsline {subsubsection}{\numberline {9.1.1}Probabilistic Roadmap (PRM)}{14}{subsubsection.9.1.1}%
 \contentsline {subsubsection}{\numberline {9.1.2}Pure Pursuit Controller}{14}{subsubsection.9.1.2}%
 \contentsline {subsubsection}{\numberline {9.1.3}Wall Following}{14}{subsubsection.9.1.3}%
-\contentsline {subsection}{\numberline {9.2}Dynamic Obstacles}{14}{subsection.9.2}%
-\contentsline {subsubsection}{\numberline {9.2.1}Real-time LiDAR Data}{14}{subsubsection.9.2.1}%
-\contentsline {subsubsection}{\numberline {9.2.2}Dynamic Path Adjustment}{14}{subsubsection.9.2.2}%
-\contentsline {subsubsection}{\numberline {9.2.3}Aiming Point Calculation}{14}{subsubsection.9.2.3}%
-\contentsline {subsection}{\numberline {9.3}Implementation Details}{14}{subsection.9.3}%
-\contentsline {subsubsection}{\numberline {9.3.1}PRM Generation}{15}{subsubsection.9.3.1}%
-\contentsline {subsubsection}{\numberline {9.3.2}Wall Following}{15}{subsubsection.9.3.2}%
-\contentsline {subsubsection}{\numberline {9.3.3}Circle Detection and Path Adjustment}{15}{subsubsection.9.3.3}%
-\contentsline {section}{\numberline {10}Discussion}{15}{section.10}%
-\contentsline {section}{\numberline {11}Conclusion}{15}{section.11}%
-\contentsline {section}{\numberline {A}MATLAB Code for Localization and Mapping}{17}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}Task provided by the school}{30}{subsection.A.1}%
+\contentsline {paragraph}{Implementing Wall following}{14}{section*.14}%
+\contentsline {subsection}{\numberline {9.2}Dynamic Obstacles}{15}{subsection.9.2}%
+\contentsline {paragraph}{Implementing Obstacle Avoidance}{15}{section*.16}%
+\contentsline {paragraph}{Implementing Obstacle Avoidance}{15}{section*.17}%
+\contentsline {subsubsection}{\numberline {9.2.1}Real-time LiDAR Data}{16}{subsubsection.9.2.1}%
+\contentsline {subsubsection}{\numberline {9.2.2}Dynamic Path Adjustment}{16}{subsubsection.9.2.2}%
+\contentsline {subsubsection}{\numberline {9.2.3}Aiming Point Calculation}{16}{subsubsection.9.2.3}%
+\contentsline {subsubsection}{\numberline {9.2.4}Circle Detection and Path Adjustment}{16}{subsubsection.9.2.4}%
+\contentsline {section}{\numberline {10}Solution overview}{16}{section.10}%
+\contentsline {section}{\numberline {11}Discussion}{19}{section.11}%
+\contentsline {section}{\numberline {12}Conclusion}{19}{section.12}%
+\contentsline {section}{\numberline {A}MATLAB Code for Localization and Mapping}{20}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}Task provided by the school}{33}{subsection.A.1}%
